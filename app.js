@@ -6,19 +6,13 @@ const contact = {
 };
 const cvUrl = "public/documents/Ibrahim%20HANNA%20(2).pdf";
 const certifications = [
-  { issuer: "IBM · Credly", title: "Machine Learning with Python", url: "https://www.credly.com/badges/396446ea-ff92-4125-865a-d381164e0251" },
-  { issuer: "University of Michigan", title: "Programming for Everybody (Getting Started with Python)", url: "https://www.coursera.org/account/accomplishments/verify/96J9QFRBYPKD" },
-  { issuer: "HKUST", title: "Software Engineering: Modeling Software Systems using UML", url: "https://www.coursera.org/account/accomplishments/verify/P4WUXFKRLSBK" },
-  { issuer: "Packt · Coursera · 29 décembre 2025", title: "Advanced Spring Cloud Microservices & Deployment with Docker", url: "https://coursera.org/share/1e21b4789039efef92e47bb920096682" },
   { issuer: "Coursera", title: "SAP Professional Fundamentals", url: "https://www.coursera.org/account/accomplishments/verify/EJEUT62JG3AK" },
-  { issuer: "Coursera", title: "The Art of the Job Interview", url: "https://www.coursera.org/account/accomplishments/verify/A209TK68CK57" },
-  { issuer: "Coursera", title: "Introduction to Java and Object-Oriented Programming", url: "https://www.coursera.org/account/accomplishments/verify/DRVBIQHX1Z45" },
-  { issuer: "Coursera", title: "React Basics", url: "https://www.coursera.org/account/accomplishments/verify/QST1MF3OUPV6" },
-  { issuer: "Coursera", title: "The Unix Workbench", url: "https://www.coursera.org/account/accomplishments/verify/FADA5EZQHENN" },
-  { issuer: "Coursera", title: "La recherche documentaire", url: "https://www.coursera.org/account/accomplishments/verify/45ED523MHYUJ" },
+  { issuer: "HKUST", title: "Software Engineering: Modeling Software Systems using UML", url: "https://www.coursera.org/account/accomplishments/verify/P4WUXFKRLSBK" },
   { issuer: "Coursera", title: "Software Engineering: Software Design and Project Management", url: "https://www.coursera.org/account/accomplishments/verify/78YVDP7N7562" },
-  { issuer: "Coursera", title: "Successful Presentation", url: "https://www.coursera.org/account/accomplishments/verify/XY5NPD3LUXLD" },
-  { issuer: "Coursera", title: "Introduction à la programmation orientée objet (en C++)", url: "https://www.coursera.org/account/accomplishments/verify/5UUM64BPYT9X" },
+  { issuer: "IBM · Credly", title: "Machine Learning with Python", url: "https://www.credly.com/badges/396446ea-ff92-4125-865a-d381164e0251" },
+  { issuer: "Packt · Coursera · 29 décembre 2025", title: "Advanced Spring Cloud Microservices & Deployment with Docker", url: "https://coursera.org/share/1e21b4789039efef92e47bb920096682" },
+  { issuer: "Coursera", title: "React Basics", url: "https://www.coursera.org/account/accomplishments/verify/QST1MF3OUPV6" },
+  { issuer: "Coursera", title: "Introduction to Java and Object-Oriented Programming", url: "https://www.coursera.org/account/accomplishments/verify/DRVBIQHX1Z45" },
 ];
 const projectDetails = {
   pde: {

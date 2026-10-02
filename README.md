@@ -9,7 +9,7 @@ Site vitrine responsive en HTML, CSS et JavaScript natifs. La V1 fonctionne sans
 - Détails des projets : éditer les éléments `<template id="project-...">` à la fin de `index.html`.
 - Style et responsive : `styles.css`.
 - CV : le PDF fourni se trouve dans `public/documents/Ibrahim HANNA (2).pdf`. Le bouton principal le télécharge sous le nom `Ibrahim_HANNA_CV.pdf`. « Version imprimable » reste une option secondaire.
-- Certifications : les quatre certifications indiquées dans `app.js` attendent leurs PDF dans `public/certificates/`. Le bouton de consultation s’active seulement lorsque le fichier existe.
+- Certifications : les sept certifications listées dans `app.js` s’ouvrent via leurs liens de vérification Credly ou Coursera.
 - SEO : `sitemap.xml` et `robots.txt` sont configurés pour `https://ibrahim-hanna.github.io`.
 
 ## Prévisualiser
@@ -25,9 +25,9 @@ Le dossier est statique et peut être déployé tel quel, sans étape de build. 
 - Email, téléphone, URL LinkedIn et URL GitHub dans `app.js`.
 - Dates exactes pour Edetsecom et Novopharma.
 - Vérification du statut et des dates du PFE Capgemini Engineering.
-- Années et fichiers justificatifs vérifiés pour les certifications listées dans `app.js`.
+- Années des certifications, lorsqu’elles sont disponibles sur les justificatifs.
 - Résultats mesurables et captures autorisées des projets.
-- Fichiers CV/certifications définitifs et favicon de marque si souhaité.
+- Fichiers de certification locaux uniquement si tu veux aussi héberger des justificatifs PDF.
 - Contributions personnelles et résultats vérifiables dans `projectDetails` au début de `app.js`.
 
 Aucune donnée chiffrée de réalisation, certification, adresse personnelle ou coordonnée n’a été inventée dans cette version.
