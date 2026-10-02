@@ -10,12 +10,11 @@ Site vitrine responsive en HTML, CSS et JavaScript natifs. La V1 fonctionne sans
 - Style et responsive : `styles.css`.
 - CV : le PDF fourni se trouve dans `public/documents/Ibrahim HANNA (2).pdf`. Le bouton principal le télécharge sous le nom `Ibrahim_HANNA_CV.pdf`. « Version imprimable » reste une option secondaire.
 - Certifications : les quatre certifications indiquées dans `app.js` attendent leurs PDF dans `public/certificates/`. Le bouton de consultation s’active seulement lorsque le fichier existe.
-- QR code : `portfolioUrl` dans `app.js` est configurée avec `https://ibrahim-hanna.github.io`. Le service QR externe reçoit cette URL ; une génération locale demanderait d’ajouter une bibliothèque QR au projet.
 - SEO : `sitemap.xml` et `robots.txt` sont configurés pour `https://ibrahim-hanna.github.io`.
 
 ## Prévisualiser
 
-Ouvrir `index.html` dans un navigateur. Pour tester le QR code et le comportement d’un hébergement web, publier le dossier sur GitHub Pages, Netlify ou Vercel.
+Ouvrir `index.html` dans un navigateur. Pour tester le comportement d’un hébergement web, publier le dossier sur GitHub Pages, Netlify ou Vercel.
 
 ## Publication
 

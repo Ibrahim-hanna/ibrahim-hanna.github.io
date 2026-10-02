@@ -4,7 +4,6 @@ const contact = {
   linkedin: "https://www.linkedin.com/in/ibrahim-hanna-0030b52a9/",
   github: "https://github.com/Ibrahim-hanna",
 };
-const portfolioUrl = "https://ibrahim-hanna.github.io";
 const cvUrl = "public/documents/Ibrahim%20HANNA%20(2).pdf";
 const certifications = [
   { issuer: "IBM · Credly", title: "Machine Learning with Python", url: "https://www.credly.com/badges/396446ea-ff92-4125-865a-d381164e0251" },
@@ -659,15 +658,9 @@ document.querySelectorAll("[data-social]").forEach((link) => {
   }
 });
 
-const qrImage = document.querySelector("#portfolio-qr");
-const qrPlaceholder = document.querySelector("#qr-placeholder");
-if (qrImage && qrPlaceholder && portfolioUrl.startsWith("https://")) {
-  qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=224x224&data=${encodeURIComponent(portfolioUrl)}`;
-  qrImage.addEventListener("load", () => qrPlaceholder.remove());
-  qrImage.addEventListener("error", () => {
-    qrImage.removeAttribute("src");
-    qrPlaceholder.textContent = "QR indisponible. Vérifier l’adresse permanente configurée.";
-  });
-} else if (qrPlaceholder) {
-  qrPlaceholder.textContent = "Configurer l’URL HTTPS définitive dans app.js pour générer le QR code.";
+document.querySelector(".qr-panel")?.remove();
+const documentsGrid = document.querySelector(".documents-grid");
+if (documentsGrid) {
+  documentsGrid.classList.add("documents-grid-no-qr");
+  documentsGrid.style.gridTemplateColumns = "minmax(0, 1fr)";
 }
