@@ -73,7 +73,7 @@ const heroRole = document.querySelector(".hero-role");
 if (heroRole) heroRole.textContent = "Ingénieur Informatique — Parcours MIAGE";
 const heroLead = document.querySelector(".hero-lead");
 if (heroLead) {
-  heroLead.textContent = "À l’interface entre processus métier, systèmes d’information et solutions ERP, je mobilise mon socle technique en BI, Data et développement applicatif pour concevoir des solutions utiles au pilotage et à la transformation des organisations.";
+  heroLead.textContent = "À l’interface entre les besoins métier, les systèmes d’information et les solutions ERP, avec un socle technique en BI, Data et développement applicatif.";
 }
 const heroGoal = document.createElement("div");
 heroGoal.className = "hero-goal";
@@ -189,6 +189,8 @@ if (sequenceText) {
     });
   sequenceText.replaceWith(sequence);
 }
+const positioningNote = document.querySelector(".intro-note");
+if (positioningNote) positioningNote.textContent = "Du besoin métier au système d’information, puis du système d’information au pilotage.";
 
 const profileTitle = document.querySelector("#profil-title");
 if (profileTitle) {
@@ -202,7 +204,7 @@ const profileCopy = document.querySelector(".profile-copy");
 if (profileCopy) {
   const paragraphs = [
     "Ingénieur en Génie Informatique, parcours MIAGE, je m’intéresse à la manière dont les systèmes d’information structurent les processus, centralisent l’information et améliorent le pilotage des organisations.",
-    "Mes expériences m’ont amené à travailler sur la compréhension des besoins, la structuration des données, la conception de solutions applicatives, la Business Intelligence et l’automatisation.",
+    "Mes expériences en développement applicatif, en Business Intelligence et dans la conception de solutions numériques m’ont amené à travailler sur les besoins métier, la structuration de l’information et l’automatisation.",
     "Cette double approche, fonctionnelle et technique, constitue le socle de mon projet professionnel. Mon objectif n’est pas de me spécialiser uniquement dans le développement, mais de relier la technologie aux enjeux métier, organisationnels et décisionnels.",
     "Je souhaite approfondir cette orientation en Master 2 Management des Systèmes d’Information, avec un intérêt particulier pour les ERP, la Business Analysis, le conseil SI et la transformation digitale.",
   ];
@@ -217,9 +219,9 @@ const bridge = document.querySelector(".bridge");
 if (bridge) {
   const pillars = [
     ["Comprendre", "Besoins métier · utilisateurs · processus · organisation", "Identifier les besoins et représenter les processus avant de concevoir une solution."],
-    ["Analyser", "SI · données · flux · exigences", "Structurer l’information et traduire les besoins métier en exigences fonctionnelles."],
-    ["Transformer", "ERP · intégration · digitalisation", "Améliorer les processus et la circulation de l’information avec des solutions SI."],
-    ["Piloter", "KPI · BI · reporting · décision", "Transformer les données en indicateurs utiles au suivi de la performance."],
+    ["Analyser", "Systèmes d’information · flux · données", "Structurer l’information et traduire les besoins métier en exigences fonctionnelles."],
+    ["Transformer", "ERP · digitalisation · intégration", "Améliorer les processus et la circulation de l’information avec des solutions SI."],
+    ["Piloter", "KPI · BI · analyse · décision", "Transformer les données en indicateurs utiles au suivi de la performance."],
   ];
   bridge.replaceChildren(...pillars.map(([title, scope, description], index) => {
     const step = document.createElement("div");
@@ -233,7 +235,7 @@ if (featuredExperience) {
   const pfeType = featuredExperience.querySelector(".experience-title .eyebrow");
   const projectName = featuredExperience.querySelector(".experience-project-name");
   const description = featuredExperience.querySelector(".experience-description");
-  if (pfeType) pfeType.textContent = "PROJET DE FIN D’ÉTUDES · PILOTAGE SI";
+  if (pfeType) pfeType.textContent = "PFE · SYSTÈMES D’INFORMATION & PILOTAGE PROJET";
   if (projectName) projectName.textContent = "PDE — Solution digitale de pilotage des projets industriels";
   if (description) description.textContent = "Conception d’une solution intelligente pour centraliser les informations projet, suivre les jalons, repérer les risques et faciliter le pilotage.";
   const contributions = [
@@ -298,7 +300,10 @@ const projectOrder = ["erpconnect", "pde", "bi", "academic"];
 const projectGrid = document.querySelector(".project-grid");
 if (projectGrid) {
   const projectCards = projectOrder.map((key) => projectGrid.querySelector(`[data-project="${key}"]`)?.closest(".project-card"));
-  projectCards.filter(Boolean).forEach((card) => projectGrid.append(card));
+  projectCards.filter(Boolean).forEach((card, index) => {
+    card.classList.toggle("project-card-featured", index === 0);
+    projectGrid.append(card);
+  });
 }
 const projectCopy = {
   erpconnect: {
@@ -372,10 +377,10 @@ if (objectiveInner) {
   const summary = objectiveInner.querySelector("p:not(.eyebrow)");
   if (eyebrow) eyebrow.textContent = "M2 · ALTERNANCE · PROJET PROFESSIONNEL";
   if (title) title.textContent = "Mon projet professionnel";
-  if (summary) summary.textContent = "Approfondir mon parcours MIAGE en Management des Systèmes d’Information, puis mettre cette spécialisation en pratique dans une mission orientée SI, ERP et analyse métier.";
+  if (summary) summary.textContent = "Construire un profil à l’interface entre les métiers et les systèmes d’information, avec une spécialisation progressive en ERP, Business Analysis et transformation digitale.";
   objectiveInner.querySelector(".objective-tags")?.remove();
   const objectives = [
-    ["01", "Prochaine étape", "Master 2 — Management des Systèmes d’Information", "Orientation ERP, analyse fonctionnelle, Business Analysis et gestion de projet SI."],
+    ["01", "Objectif académique", "Master 2 — Management des Systèmes d’Information", "Orientation ERP."],
     ["02", "En parallèle", "Alternance en France", "Contribuer à des missions en systèmes d’information, ERP, conseil SI, pilotage de projets ou transformation digitale."],
     ["03", "À moyen terme", "Évoluer à l’interface", "Consultant SI · Consultant fonctionnel ERP · Business Analyst · Chef de projet SI"],
   ];
@@ -404,7 +409,11 @@ const contactTitle = document.querySelector("#contact-title");
 if (contactTitle) contactTitle.textContent = "Construisons la prochaine étape";
 const contactCopy = document.querySelector(".contact-main > p:not(.eyebrow)");
 if (contactCopy) {
-  contactCopy.textContent = "Vous êtes une université, une entreprise ou une équipe SI travaillant sur l’ERP, la transformation digitale ou le pilotage des systèmes d’information ? Je recherche un Master 2 en Management des SI et une alternance dans ce domaine.";
+  contactCopy.textContent = "À la recherche d’une alternance en Management des Systèmes d’Information, ERP, Business Analysis ou transformation digitale dans le cadre de mon futur Master 2.";
+  const contactSupport = document.createElement("p");
+  contactSupport.className = "contact-support";
+  contactSupport.textContent = "Je souhaite mettre mon socle informatique au service de problématiques métier, SI et ERP.";
+  contactCopy.after(contactSupport);
 }
 
 async function enableDownloadWhenAvailable(link, path, readyLabel, pendingLabel) {
