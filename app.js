@@ -82,6 +82,20 @@ if (experienceList && featuredExperience) {
 
 const heroRole = document.querySelector(".hero-role");
 if (heroRole) heroRole.textContent = "Ingénieur Informatique — Parcours MIAGE";
+const heroHeading = document.querySelector("#hero-title");
+if (heroHeading && !document.querySelector(".hero-portrait")) {
+  const nameRow = document.createElement("div");
+  nameRow.className = "hero-name-row";
+  const portrait = document.createElement("img");
+  portrait.className = "hero-portrait";
+  portrait.src = "public/images/ibrahim-hanna.jpg";
+  portrait.alt = "Portrait d’Ibrahim HANNA";
+  portrait.width = 160;
+  portrait.height = 160;
+  portrait.fetchPriority = "high";
+  heroHeading.before(nameRow);
+  nameRow.append(heroHeading, portrait);
+}
 const heroLead = document.querySelector(".hero-lead");
 if (heroLead) {
   heroLead.textContent = "À l’interface entre les besoins métier, les systèmes d’information et les solutions ERP, avec un socle technique en BI, Data et développement applicatif.";
