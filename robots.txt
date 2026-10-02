@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ibrahim-hanna.github.io/sitemap.xml
