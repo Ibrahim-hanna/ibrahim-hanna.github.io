@@ -4,7 +4,7 @@ const contact = {
   linkedin: "https://www.linkedin.com/in/ibrahim-hanna-0030b52a9/",
   github: "https://github.com/Ibrahim-hanna",
 };
-const cvUrl = "public/documents/Ibrahim%20HANNA%20(2).pdf";
+const cvUrl = "public/documents/Ibrahim%20HANNAFianle.pdf";
 const certifications = [
   { issuer: "Coursera", title: "SAP Professional Fundamentals", url: "https://www.coursera.org/account/accomplishments/verify/EJEUT62JG3AK" },
   { issuer: "HKUST", title: "Software Engineering: Modeling Software Systems using UML", url: "https://www.coursera.org/account/accomplishments/verify/P4WUXFKRLSBK" },

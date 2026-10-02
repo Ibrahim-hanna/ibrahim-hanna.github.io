@@ -8,7 +8,7 @@ Site vitrine responsive en HTML, CSS et JavaScript natifs. La V1 fonctionne sans
 - Formation, expériences, compétences et textes : modifier les sections correspondantes dans `index.html`.
 - Détails des projets : éditer les éléments `<template id="project-...">` à la fin de `index.html`.
 - Style et responsive : `styles.css`.
-- CV : le PDF fourni se trouve dans `public/documents/Ibrahim HANNA (2).pdf`. Le bouton principal le télécharge sous le nom `Ibrahim_HANNA_CV.pdf`. « Version imprimable » reste une option secondaire.
+- CV : le PDF fourni se trouve dans `public/documents/Ibrahim HANNAFianle.pdf`. Le bouton principal le télécharge sous le nom `Ibrahim_HANNA_CV.pdf`. « Version imprimable » reste une option secondaire.
 - Certifications : les sept certifications listées dans `app.js` s’ouvrent via leurs liens de vérification Credly ou Coursera.
 - SEO : `sitemap.xml` et `robots.txt` sont configurés pour `https://ibrahim-hanna.github.io`.
 
