@@ -55,17 +55,28 @@ const featuredExperience = experienceList?.querySelector(".experience-featured")
 if (experienceList && featuredExperience) {
   const currentRole = document.createElement("article");
   currentRole.className = "experience-item";
-  currentRole.innerHTML = '<div class="experience-meta"><span class="experience-index">01</span><span>AOÛT 2026 — PRÉSENT</span></div><div class="experience-main"><div class="experience-title"><div><p class="eyebrow">DATA ENGINEER</p><h3>Capgemini Engineering</h3><p class="experience-location">Casablanca, Maroc</p></div></div><p class="experience-description">Conception et optimisation de solutions d’intégration et d’exploitation des données.</p><div class="experience-points"><span>Automatisation des flux pour les besoins décisionnels des métiers</span><span>Amélioration de la qualité, de la fiabilité et de la gouvernance des données</span><span>Collaboration avec les équipes fonctionnelles et techniques sur des projets de transformation digitale</span></div><div class="inline-tags"><span>Data Engineering</span><span>Intégration de données</span><span>Qualité des données</span><span>Gouvernance</span></div></div>';
+  currentRole.innerHTML = '<div class="experience-meta"><span class="experience-index">01</span><span>CDI · 08/2026 — PRÉSENT</span></div><div class="experience-main"><div class="experience-title"><div><p class="eyebrow">Data Engineer</p><h3>Capgemini Engineering</h3><p class="experience-location">Casablanca, Maroc</p></div></div><p class="experience-description">Conception et optimisation de solutions d’intégration et d’exploitation des données.</p><div class="experience-points"><span>Automatisation des flux pour les besoins décisionnels des métiers</span><span>Amélioration de la qualité, de la fiabilité et de la gouvernance des données</span><span>Collaboration avec les équipes fonctionnelles et techniques sur des projets de transformation digitale</span></div><div class="inline-tags"><span>Data Engineering</span><span>Intégration de données</span><span>Qualité des données</span><span>Gouvernance</span></div></div>';
   experienceList.insertBefore(currentRole, featuredExperience);
 
   const pfeDate = featuredExperience.querySelector(".experience-meta span:last-child");
-  if (pfeDate) pfeDate.textContent = "FÉV. — JUIL. 2026";
+  if (pfeDate) pfeDate.textContent = "02/2026 — 07/2026";
+  const pfeTitle = featuredExperience.querySelector(".experience-title .eyebrow");
+  if (pfeTitle) pfeTitle.textContent = "Stagiaire Data & Intelligence Artificielle";
 
-  for (const experience of experienceList.querySelectorAll(".experience-item")) {
+  for (const [index, experience] of [...experienceList.querySelectorAll(".experience-item")].entries()) {
     const company = experience.querySelector(".experience-title h3")?.textContent;
     const date = experience.querySelector(".experience-meta span:last-child");
-    if (company === "Edetsecom" && date) date.textContent = "JUIL. — AOÛT 2025";
-    if (company === "Novopharma" && date) date.textContent = "JUIL. 2024";
+    const number = experience.querySelector(".experience-index");
+    if (number) number.textContent = `0${index + 1}`;
+    const role = experience.querySelector(".experience-title .eyebrow");
+    if (company === "Edetsecom") {
+      if (date) date.textContent = "07/2025 — 08/2025";
+      if (role) role.textContent = "Stagiaire Développeur Full Stack Java";
+    }
+    if (company === "Novopharma") {
+      if (date) date.textContent = "07/2024";
+      if (role) role.textContent = "Stagiaire Développeur Desktop";
+    }
   }
 }
 
@@ -235,7 +246,7 @@ if (featuredExperience) {
   const pfeType = featuredExperience.querySelector(".experience-title .eyebrow");
   const projectName = featuredExperience.querySelector(".experience-project-name");
   const description = featuredExperience.querySelector(".experience-description");
-  if (pfeType) pfeType.textContent = "PFE · SYSTÈMES D’INFORMATION & PILOTAGE PROJET";
+  if (pfeType) pfeType.textContent = "Stagiaire Data & Intelligence Artificielle";
   if (projectName) projectName.textContent = "PDE — Solution digitale de pilotage des projets industriels";
   if (description) description.textContent = "Conception d’une solution intelligente pour centraliser les informations projet, suivre les jalons, repérer les risques et faciliter le pilotage.";
   const contributions = [
