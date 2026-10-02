@@ -111,6 +111,49 @@ navigation?.querySelectorAll("a").forEach((link) => {
   });
 });
 
+const sectionLinks = [...document.querySelectorAll('.navigation a[href^="#"]')];
+const observedSections = sectionLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+const updateActiveSection = () => {
+  const checkpoint = window.scrollY + 150;
+  const current = observedSections.reduce((active, section) => (
+    section.offsetTop <= checkpoint ? section : active
+  ), observedSections[0]);
+  if (!current) return;
+  sectionLinks.forEach((link) => {
+    if (link.hash === `#${current.id}`) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+};
+window.addEventListener("scroll", updateActiveSection, { passive: true });
+window.addEventListener("resize", updateActiveSection);
+updateActiveSection();
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.body.classList.add("motion-ready");
+  let pendingRevealItems = [...document.querySelectorAll(
+    ".hero-copy, .hero-visual, .section-heading, .profile-copy, .bridge, .timeline-item, .experience-item, .project-card, .skill-group, .documents-grid, .objective-inner, .contact-main, .contact-side",
+  )];
+  pendingRevealItems.forEach((item, index) => {
+    item.classList.add("reveal-item");
+    item.style.setProperty("--reveal-delay", `${(index % 4) * 70}ms`);
+  });
+
+  const updateVisibleReveals = () => {
+    pendingRevealItems = pendingRevealItems.filter((item) => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top >= window.innerHeight - 36 || rect.bottom <= 0) return true;
+      item.classList.add("is-visible");
+      return false;
+    });
+  };
+  window.addEventListener("scroll", updateVisibleReveals, { passive: true });
+  window.addEventListener("resize", updateVisibleReveals);
+  updateVisibleReveals();
+}
+
 const projectDialog = document.querySelector("#project-dialog");
 const dialogContent = document.querySelector("#dialog-content");
 
