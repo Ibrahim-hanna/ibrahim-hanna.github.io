@@ -23,20 +23,24 @@ const certifications = [
 ];
 const projectDetails = {
   pde: {
-    role: "Développement d’une plateforme intelligente de suivi des risques projets, conception d’indicateurs et de tableaux de bord décisionnels.",
-    result: "Plateforme de suivi des risques projets et valorisation des données pour l’aide à la décision et le pilotage opérationnel.",
+    problem: "Les informations projet étant réparties entre différentes sources, l’enjeu était de centraliser les données, suivre les jalons, identifier les situations à risque et faciliter l’aide à la décision.",
+    role: "Analyse du besoin, structuration des données projet, définition des indicateurs, automatisation de vérifications métier et conception d’une interface de pilotage.",
+    result: "Une plateforme de suivi des risques projets qui valorise les données opérationnelles pour aider au pilotage. L’IA générative a été explorée comme assistance utilisateur.",
   },
   erpconnect: {
-    role: "Conception et intégration d’une solution ERP Odoo, développement des échanges et synchronisations de données, création de tableaux de bord et d’indicateurs.",
-    result: "Contribution à l’optimisation des processus métier et au pilotage décisionnel.",
+    problem: "Comment faire circuler l’information entre un ERP, les applications métier et les outils de pilotage tout en conservant une donnée cohérente et exploitable ?",
+    role: "Analyse du besoin fonctionnel, modélisation des données, intégration Odoo, échanges API, synchronisation des informations et exploitation des données pour les KPI.",
+    result: "Une architecture d’intégration ERP orientée processus métier, cohérence des données et pilotage décisionnel.",
   },
   bi: {
-    role: "Conception d’un entrepôt de données en schéma étoile, développement de tableaux de bord Power BI et mise en place d’indicateurs.",
-    result: "Indicateurs d’aide à la décision pour le suivi des performances commerciales.",
+    problem: "Comment transformer des données de ventes et de stocks en indicateurs lisibles pour suivre les performances commerciales ?",
+    role: "Conception d’un entrepôt de données en schéma étoile, développement de tableaux de bord Power BI et mise en place d’indicateurs commerciaux.",
+    result: "Des analyses décisionnelles des ventes, des stocks et des performances commerciales à partir de données d’entreprise.",
   },
   academic: {
-    role: "Conception d’un SI centralisant la gestion des étudiants, modélisation des processus et gestion du cycle de vie des données.",
-    result: "Automatisation des opérations administratives et amélioration de la traçabilité.",
+    problem: "Comment structurer les principales activités d’un établissement académique autour de ses acteurs, de ses processus et de règles métier cohérentes ?",
+    role: "Identification des acteurs et besoins, modélisation des processus, structuration des données et définition des principales règles métier.",
+    result: "Un système d’information académique pensé pour automatiser les opérations administratives et renforcer la traçabilité.",
   },
 };
 
@@ -65,6 +69,344 @@ if (experienceList && featuredExperience) {
   }
 }
 
+const heroRole = document.querySelector(".hero-role");
+if (heroRole) heroRole.textContent = "Ingénieur Informatique — Parcours MIAGE";
+const heroLead = document.querySelector(".hero-lead");
+if (heroLead) {
+  heroLead.textContent = "À l’interface entre processus métier, systèmes d’information et solutions ERP, je mobilise mon socle technique en BI, Data et développement applicatif pour concevoir des solutions utiles au pilotage et à la transformation des organisations.";
+}
+const heroGoal = document.createElement("div");
+heroGoal.className = "hero-goal";
+heroGoal.innerHTML = "<strong>Objectif</strong><span>Master 2 Management des Systèmes d’Information — orientation ERP</span>";
+heroLead?.after(heroGoal);
+const heroTopics = document.querySelector(".topic-row");
+if (heroTopics) {
+  heroTopics.replaceChildren(...["Systèmes d’Information", "ERP", "Business Analysis", "Transformation digitale"]
+    .map((topic) => {
+      const badge = document.createElement("span");
+      badge.textContent = topic;
+      return badge;
+    }));
+}
+const heroStatus = document.querySelector(".hero-contact > span:first-child");
+if (heroStatus) heroStatus.textContent = "Master 2 Management des SI · orientation ERP";
+const heroContactLink = document.querySelector(".hero-contact a");
+if (heroContactLink) {
+  heroContactLink.href = "#objectif";
+  heroContactLink.textContent = "Alternance en France →";
+}
+const visualKicker = document.querySelector(".visual-kicker");
+const visualLive = document.querySelector(".visual-live");
+const previewLabel = document.querySelector(".preview-label");
+const previewHeading = document.querySelector(".preview-heading h2");
+if (visualKicker) visualKicker.textContent = "SYSTÈMES D’INFORMATION";
+if (visualLive) visualLive.textContent = "ERP / SI";
+if (previewLabel) previewLabel.textContent = "PROCESSUS · INTÉGRATION · PILOTAGE";
+if (previewHeading) previewHeading.textContent = "Flux d’information";
+const previewMetrics = document.querySelectorAll(".preview-metrics > div");
+const heroMetrics = [["ERP", "Odoo", "Processus métier"], ["Pilotage", "KPI", "Aide à la décision"]];
+previewMetrics.forEach((metric, index) => {
+  const [label, value, detail] = heroMetrics[index] ?? [];
+  if (!label) return;
+  metric.querySelector("span").textContent = label;
+  metric.querySelector("strong").textContent = value;
+  metric.querySelector("small").textContent = detail;
+});
+const heroFlow = document.createElement("div");
+heroFlow.className = "hero-system-flow";
+heroFlow.setAttribute("aria-label", "Processus métier, ERP Odoo, API, données, BI et KPI");
+const systemStages = [["Processus", "Métier"], ["ERP", "Odoo"], ["API", "Intégration"], ["Données", "SQL"], ["BI · KPI", "Pilotage"]];
+systemStages.forEach(([name, detail], index) => {
+  const stage = document.createElement("div");
+  stage.className = `hero-system-step${index === 1 ? " system-focus" : ""}${index === 4 ? " decision-focus" : ""}`;
+  const label = document.createElement("strong");
+  label.textContent = name;
+  const description = document.createElement("small");
+  description.textContent = detail;
+  stage.append(label, description);
+  heroFlow.append(stage);
+  if (index < systemStages.length - 1) {
+    const connector = document.createElement("span");
+    connector.className = "hero-system-connector";
+    connector.setAttribute("aria-hidden", "true");
+    connector.textContent = "→";
+    heroFlow.append(connector);
+  }
+});
+document.querySelector(".chart-area")?.replaceChildren(heroFlow);
+const visualCaption = document.querySelector(".visual-caption");
+if (visualCaption) {
+  const caption = visualCaption.querySelector("span:first-child");
+  const index = visualCaption.querySelector("span:last-child");
+  if (caption) caption.textContent = "PROCESSUS → ERP → DONNÉES → PILOTAGE";
+  if (index) index.textContent = "SI / 01";
+}
+const previewFooter = document.querySelector(".preview-footer");
+if (previewFooter) {
+  const signal = previewFooter.querySelector("span:first-child");
+  const decision = previewFooter.querySelector("span:last-child");
+  if (signal) {
+    const marker = document.createElement("b");
+    marker.className = "flow-marker";
+    signal.replaceChildren(marker, document.createTextNode("Flux intégrés"));
+  }
+  if (decision) decision.textContent = "Performance métier";
+}
+const visualIndex = document.querySelector(".visual-index");
+if (visualIndex) visualIndex.textContent = "SI";
+
+const objectiveSection = document.querySelector(".objective-band");
+if (objectiveSection) objectiveSection.id = "objectif";
+const navigation = document.querySelector(".navigation");
+if (navigation && !navigation.querySelector('a[href="#accueil"]')) {
+  const homeLink = document.createElement("a");
+  homeLink.href = "#accueil";
+  homeLink.textContent = "Accueil";
+  navigation.prepend(homeLink);
+  const objectiveLink = document.createElement("a");
+  objectiveLink.href = "#objectif";
+  objectiveLink.textContent = "Objectif";
+  navigation.querySelector('a[href="#contact"]')?.before(objectiveLink);
+}
+
+const sequenceText = document.querySelector(".intro-inner p");
+if (sequenceText) {
+  const sequence = document.createElement("div");
+  sequence.className = "position-sequence";
+  sequence.setAttribute("aria-label", "MIAGE, systèmes d’information, ERP, Business Analysis, transformation digitale");
+  ["MIAGE", "Systèmes d’information", "ERP", "Business Analysis", "Transformation digitale"]
+    .forEach((label, index, stages) => {
+      const stage = document.createElement("span");
+      stage.className = "position-stage";
+      stage.textContent = label;
+      sequence.append(stage);
+      if (index < stages.length - 1) {
+        const connector = document.createElement("span");
+        connector.className = "position-connector";
+        connector.setAttribute("aria-hidden", "true");
+        sequence.append(connector);
+      }
+    });
+  sequenceText.replaceWith(sequence);
+}
+
+const profileTitle = document.querySelector("#profil-title");
+if (profileTitle) {
+  profileTitle.replaceChildren(
+    document.createTextNode("Comprendre les organisations."),
+    document.createElement("br"),
+    document.createTextNode("Transformer les systèmes. Piloter l’information."),
+  );
+}
+const profileCopy = document.querySelector(".profile-copy");
+if (profileCopy) {
+  const paragraphs = [
+    "Ingénieur en Génie Informatique, parcours MIAGE, je m’intéresse à la manière dont les systèmes d’information structurent les processus, centralisent l’information et améliorent le pilotage des organisations.",
+    "Mes expériences m’ont amené à travailler sur la compréhension des besoins, la structuration des données, la conception de solutions applicatives, la Business Intelligence et l’automatisation.",
+    "Cette double approche, fonctionnelle et technique, constitue le socle de mon projet professionnel. Mon objectif n’est pas de me spécialiser uniquement dans le développement, mais de relier la technologie aux enjeux métier, organisationnels et décisionnels.",
+    "Je souhaite approfondir cette orientation en Master 2 Management des Systèmes d’Information, avec un intérêt particulier pour les ERP, la Business Analysis, le conseil SI et la transformation digitale.",
+  ];
+  profileCopy.replaceChildren(...paragraphs.map((text) => {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    return paragraph;
+  }));
+}
+
+const bridge = document.querySelector(".bridge");
+if (bridge) {
+  const pillars = [
+    ["Comprendre", "Besoins métier · utilisateurs · processus · organisation", "Identifier les besoins et représenter les processus avant de concevoir une solution."],
+    ["Analyser", "SI · données · flux · exigences", "Structurer l’information et traduire les besoins métier en exigences fonctionnelles."],
+    ["Transformer", "ERP · intégration · digitalisation", "Améliorer les processus et la circulation de l’information avec des solutions SI."],
+    ["Piloter", "KPI · BI · reporting · décision", "Transformer les données en indicateurs utiles au suivi de la performance."],
+  ];
+  bridge.replaceChildren(...pillars.map(([title, scope, description], index) => {
+    const step = document.createElement("div");
+    step.className = "bridge-step";
+    step.innerHTML = `<span class="bridge-number">0${index + 1}</span><div><strong>${title}</strong><small>${scope}</small><p>${description}</p></div>`;
+    return step;
+  }));
+}
+
+if (featuredExperience) {
+  const pfeType = featuredExperience.querySelector(".experience-title .eyebrow");
+  const projectName = featuredExperience.querySelector(".experience-project-name");
+  const description = featuredExperience.querySelector(".experience-description");
+  if (pfeType) pfeType.textContent = "PROJET DE FIN D’ÉTUDES · PILOTAGE SI";
+  if (projectName) projectName.textContent = "PDE — Solution digitale de pilotage des projets industriels";
+  if (description) description.textContent = "Conception d’une solution intelligente pour centraliser les informations projet, suivre les jalons, repérer les risques et faciliter le pilotage.";
+  const contributions = [
+    "Analyse du besoin et compréhension du processus de suivi projet",
+    "Structuration des données et mise en place d’indicateurs de pilotage",
+    "Automatisation de vérifications métier et développement d’un moteur d’analyse des risques",
+    "Conception d’une interface multi-profils et exploration de l’IA comme assistance utilisateur",
+  ];
+  const points = featuredExperience.querySelector(".experience-points");
+  points?.replaceChildren(...contributions.map((text) => {
+    const item = document.createElement("span");
+    item.textContent = text;
+    return item;
+  }));
+  const technologies = ["Python", "FastAPI", "Streamlit", "SQL", "Machine Learning", "IA générative"];
+  const tags = featuredExperience.querySelector(".experience-main > .inline-tags");
+  tags?.replaceChildren(...technologies.map((text) => {
+    const tag = document.createElement("span");
+    tag.textContent = text;
+    return tag;
+  }));
+}
+
+const experienceCopy = {
+  Edetsecom: {
+    description: "Participation à la conception et au développement de solutions applicatives destinées à digitaliser et structurer des processus métier.",
+    points: ["Compréhension des besoins fonctionnels", "Conception d’API et de fonctionnalités métier", "Gestion et structuration des données", "Amélioration des processus existants"],
+    technologies: ["Java", "Spring Boot", "SQL", "REST API", "Git"],
+  },
+  Novopharma: {
+    description: "Contribution à une application de gestion interne à partir des besoins des utilisateurs.",
+    points: ["Analyse des besoins et des traitements", "Automatisation de tâches métier", "Structuration des données", "Développement de fonctionnalités de gestion"],
+    technologies: ["Développement applicatif", "Base de données", "Automatisation"],
+  },
+};
+for (const experience of experienceList?.querySelectorAll(".experience-item") ?? []) {
+  const company = experience.querySelector(".experience-title h3")?.textContent;
+  const content = experienceCopy[company];
+  if (!content) continue;
+  const description = experience.querySelector(".experience-description");
+  if (description) description.textContent = content.description;
+  let points = experience.querySelector(".experience-points");
+  if (!points) {
+    points = document.createElement("div");
+    points.className = "experience-points";
+    experience.querySelector(".experience-main")?.append(points);
+  }
+  points.replaceChildren(...content.points.map((text) => {
+    const item = document.createElement("span");
+    item.textContent = text;
+    return item;
+  }));
+  const tags = experience.querySelector(".experience-main > .inline-tags");
+  tags?.replaceChildren(...content.technologies.map((text) => {
+    const tag = document.createElement("span");
+    tag.textContent = text;
+    return tag;
+  }));
+}
+
+const projectOrder = ["erpconnect", "pde", "bi", "academic"];
+const projectGrid = document.querySelector(".project-grid");
+if (projectGrid) {
+  const projectCards = projectOrder.map((key) => projectGrid.querySelector(`[data-project="${key}"]`)?.closest(".project-card"));
+  projectCards.filter(Boolean).forEach((card) => projectGrid.append(card));
+}
+const projectCopy = {
+  erpconnect: {
+    type: "ERP · PROCESSUS MÉTIER · INTÉGRATION SI",
+    title: "ERPConnect",
+    description: "Explorer l’intégration d’Odoo avec les applications métier et les outils décisionnels pour centraliser l’information et suivre les KPI.",
+  },
+  pde: {
+    type: "SYSTÈME D’INFORMATION · PILOTAGE · IA APPLIQUÉE",
+    title: "PDE — Predictive Delay Engine",
+    description: "Centraliser les données projet, suivre les jalons et transformer les signaux de risque en informations utiles au pilotage.",
+  },
+  bi: {
+    type: "BI · DATA WAREHOUSE · KPI · POWER BI",
+    title: "Business Intelligence & aide à la décision",
+    description: "Transformer des données de ventes et de stocks en analyses décisionnelles grâce à un schéma en étoile et des tableaux de bord.",
+  },
+  academic: {
+    type: "ANALYSE FONCTIONNELLE · PROCESSUS · SI",
+    title: "Système de gestion académique",
+    description: "Modéliser les acteurs, processus et règles métier d’un système d’information pour un établissement académique.",
+  },
+};
+for (const card of projectGrid?.querySelectorAll(".project-card") ?? []) {
+  const key = card.querySelector("[data-project]")?.dataset.project;
+  const copy = projectCopy[key];
+  if (!copy) continue;
+  card.querySelector(".project-type").textContent = copy.type;
+  card.querySelector(".project-card-body h3").textContent = copy.title;
+  card.querySelector(".project-card-body > p").textContent = copy.description;
+}
+
+const skillGroups = [
+  ["Management des Systèmes d’Information", "Analyse fonctionnelle · Analyse des besoins · Processus métier · Modélisation SI · UML · Gestion de projet SI · Transformation digitale", "SI"],
+  ["ERP & intégration", "ERP · Odoo · Processus métier · Intégration SI · API · Synchronisation des données · Flux d’information", "ERP"],
+  ["Business Intelligence", "SQL · Power BI · ETL · Data Warehouse · Schéma en étoile · KPI · Reporting · Aide à la décision", "BI"],
+  ["Pilotage & analyse", "Analyse de données · Suivi de performance · Indicateurs · Analyse des risques · Reporting projet · Aide au pilotage", "KPI"],
+  ["Socle technique", "Python · Java · Spring Boot · FastAPI · React · Git · PostgreSQL · MySQL · SQL Server · Oracle", "DEV"],
+  ["IA appliquée", "Machine Learning · Random Forest · LLM · IA générative · Automatisation intelligente", "IA"],
+];
+const skillsGrid = document.querySelector(".skills-grid");
+if (skillsGrid) {
+  skillsGrid.replaceChildren(...skillGroups.map(([title, text, mark], index) => {
+    const row = document.createElement("article");
+    row.className = "skill-group";
+    row.innerHTML = `<span class="skill-index">0${index + 1}</span><div><h3>${title}</h3><p>${text}</p></div><span class="skill-mark">${mark}</span>`;
+    return row;
+  }));
+}
+
+const education = document.querySelector("#parcours .timeline-current .timeline-content");
+if (education) {
+  const institution = education.querySelector(".timeline-title-row p");
+  if (institution) institution.textContent = "EMSI — École Marocaine des Sciences de l’Ingénieur, Casablanca";
+  const summary = document.createElement("p");
+  summary.className = "education-summary";
+  summary.textContent = "Formation couvrant l’informatique, les systèmes d’information, les bases de données, le développement logiciel, la Business Intelligence et la gestion de projet.";
+  education.querySelector(".inline-tags")?.before(summary);
+  const tags = education.querySelector(".inline-tags");
+  tags?.replaceChildren(...["Systèmes d’information", "Business Intelligence", "Gestion de projet", "Développement applicatif", "Data & IA"].map((text) => {
+    const tag = document.createElement("span");
+    tag.textContent = text;
+    return tag;
+  }));
+}
+
+const objectiveInner = document.querySelector(".objective-inner");
+if (objectiveInner) {
+  const eyebrow = objectiveInner.querySelector(".eyebrow");
+  const title = objectiveInner.querySelector("h2");
+  const summary = objectiveInner.querySelector("p:not(.eyebrow)");
+  if (eyebrow) eyebrow.textContent = "M2 · ALTERNANCE · PROJET PROFESSIONNEL";
+  if (title) title.textContent = "Mon projet professionnel";
+  if (summary) summary.textContent = "Approfondir mon parcours MIAGE en Management des Systèmes d’Information, puis mettre cette spécialisation en pratique dans une mission orientée SI, ERP et analyse métier.";
+  objectiveInner.querySelector(".objective-tags")?.remove();
+  const objectives = [
+    ["01", "Prochaine étape", "Master 2 — Management des Systèmes d’Information", "Orientation ERP, analyse fonctionnelle, Business Analysis et gestion de projet SI."],
+    ["02", "En parallèle", "Alternance en France", "Contribuer à des missions en systèmes d’information, ERP, conseil SI, pilotage de projets ou transformation digitale."],
+    ["03", "À moyen terme", "Évoluer à l’interface", "Consultant SI · Consultant fonctionnel ERP · Business Analyst · Chef de projet SI"],
+  ];
+  const grid = document.createElement("div");
+  grid.className = "objective-grid";
+  objectives.forEach(([number, label, heading, description]) => {
+    const card = document.createElement("article");
+    card.className = "objective-card";
+    const index = document.createElement("span");
+    index.className = "objective-index";
+    index.textContent = number;
+    const stage = document.createElement("p");
+    stage.className = "objective-stage";
+    stage.textContent = label;
+    const cardTitle = document.createElement("h3");
+    cardTitle.textContent = heading;
+    const cardDescription = document.createElement("p");
+    cardDescription.textContent = description;
+    card.append(index, stage, cardTitle, cardDescription);
+    grid.append(card);
+  });
+  objectiveInner.append(grid);
+}
+
+const contactTitle = document.querySelector("#contact-title");
+if (contactTitle) contactTitle.textContent = "Construisons la prochaine étape";
+const contactCopy = document.querySelector(".contact-main > p:not(.eyebrow)");
+if (contactCopy) {
+  contactCopy.textContent = "Vous êtes une université, une entreprise ou une équipe SI travaillant sur l’ERP, la transformation digitale ou le pilotage des systèmes d’information ? Je recherche un Master 2 en Management des SI et une alternance dans ce domaine.";
+}
+
 async function enableDownloadWhenAvailable(link, path, readyLabel, pendingLabel) {
   link.href = path;
   link.setAttribute("aria-disabled", "true");
@@ -91,7 +433,6 @@ async function enableDownloadWhenAvailable(link, path, readyLabel, pendingLabel)
 }
 
 const menuToggle = document.querySelector(".menu-toggle");
-const navigation = document.querySelector(".navigation");
 const englishCvRow = [...document.querySelectorAll(".documents-list .document-row")]
   .find((row) => row.textContent.includes("CV — English"));
 englishCvRow?.remove();
@@ -134,7 +475,7 @@ updateActiveSection();
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.body.classList.add("motion-ready");
   let pendingRevealItems = [...document.querySelectorAll(
-    ".hero-copy, .hero-visual, .section-heading, .profile-copy, .bridge, .timeline-item, .experience-item, .project-card, .skill-group, .documents-grid, .objective-inner, .contact-main, .contact-side",
+    ".hero-copy, .hero-visual, .section-heading, .profile-copy, .bridge, .timeline-item, .experience-item, .project-card, .skill-group, .documents-grid, .objective-inner, .objective-card, .position-sequence, .contact-main, .contact-side",
   )];
   pendingRevealItems.forEach((item, index) => {
     item.classList.add("reveal-item");
@@ -161,9 +502,10 @@ function openProject(projectName) {
   const template = document.querySelector(`#project-${projectName}`);
   if (!template || !projectDialog || !dialogContent) return;
   dialogContent.replaceChildren(template.content.cloneNode(true));
+  dialogContent.classList.add("project-content-ready");
   const details = projectDetails[projectName];
   if (details) {
-    for (const [title, text] of [["Mon rôle", details.role], ["Résultats", details.result]]) {
+    const createSection = (title, text) => {
       const section = document.createElement("section");
       section.className = "dialog-section";
       const heading = document.createElement("h3");
@@ -171,8 +513,16 @@ function openProject(projectName) {
       const description = document.createElement("p");
       description.textContent = text;
       section.append(heading, description);
-      dialogContent.append(section);
-    }
+      return section;
+    };
+    const firstSection = dialogContent.querySelector(".dialog-section");
+    const problemSection = createSection("Problématique", details.problem);
+    const roleSection = createSection("Mon rôle", details.role);
+    if (firstSection) firstSection.after(problemSection, roleSection);
+    const resultSection = createSection("Résultat & apport", details.result);
+    const confidentialityNote = dialogContent.querySelector(".confidentiality-note");
+    if (confidentialityNote) confidentialityNote.before(resultSection);
+    else dialogContent.append(resultSection);
   }
   projectDialog.showModal();
   document.body.classList.add("body-lock");
