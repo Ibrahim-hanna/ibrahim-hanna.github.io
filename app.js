@@ -6,34 +6,34 @@ const contact = {
 };
 const cvUrl = "public/documents/Ibrahim%20HANNAFianle.pdf";
 const certifications = [
-  { issuer: "Coursera", title: "SAP Professional Fundamentals", url: "https://www.coursera.org/account/accomplishments/verify/EJEUT62JG3AK" },
+  { issuer: "IBM · Credly", title: "Machine Learning with Python", url: "https://www.credly.com/badges/396446ea-ff92-4125-865a-d381164e0251" },
   { issuer: "HKUST", title: "Software Engineering: Modeling Software Systems using UML", url: "https://www.coursera.org/account/accomplishments/verify/P4WUXFKRLSBK" },
   { issuer: "Coursera", title: "Software Engineering: Software Design and Project Management", url: "https://www.coursera.org/account/accomplishments/verify/78YVDP7N7562" },
-  { issuer: "IBM · Credly", title: "Machine Learning with Python", url: "https://www.credly.com/badges/396446ea-ff92-4125-865a-d381164e0251" },
   { issuer: "Packt · Coursera · 29 décembre 2025", title: "Advanced Spring Cloud Microservices & Deployment with Docker", url: "https://coursera.org/share/1e21b4789039efef92e47bb920096682" },
   { issuer: "Coursera", title: "React Basics", url: "https://www.coursera.org/account/accomplishments/verify/QST1MF3OUPV6" },
   { issuer: "Coursera", title: "Introduction to Java and Object-Oriented Programming", url: "https://www.coursera.org/account/accomplishments/verify/DRVBIQHX1Z45" },
+  { issuer: "Coursera", title: "SAP Professional Fundamentals", url: "https://www.coursera.org/account/accomplishments/verify/EJEUT62JG3AK" },
 ];
 const projectDetails = {
   pde: {
-    problem: "Les informations projet étant réparties entre différentes sources, l’enjeu était de centraliser les données, suivre les jalons, identifier les situations à risque et faciliter l’aide à la décision.",
-    role: "Analyse du besoin, structuration des données projet, définition des indicateurs, automatisation de vérifications métier et conception d’une interface de pilotage.",
-    result: "Une plateforme de suivi des risques projets qui valorise les données opérationnelles pour aider au pilotage. L’IA générative a été explorée comme assistance utilisateur.",
+    problem: "Dans les programmes automobiles, les informations projet sont dispersées : il devient difficile d’anticiper les retards de jalons et de prioriser les points durs.",
+    role: "Prototype d’un modèle de prédiction des retards (Random Forest), conception d’un score de risque interprétable, intégration de LLM pour générer recommandations et rapports, pipeline d’ingestion automatisé et tableau de bord.",
+    result: "Une plateforme prédictive qui centralise les données projet, classe les risques et propose des actions aux managers, avec une couche IA générative locale (Ollama) ou cloud (Azure OpenAI).",
   },
-  erpconnect: {
-    problem: "Comment faire circuler l’information entre un ERP, les applications métier et les outils de pilotage tout en conservant une donnée cohérente et exploitable ?",
-    role: "Analyse du besoin fonctionnel, modélisation des données, intégration Odoo, échanges API, synchronisation des informations et exploitation des données pour les KPI.",
-    result: "Une architecture d’intégration ERP orientée processus métier, cohérence des données et pilotage décisionnel.",
+  rag: {
+    problem: "Comment retrouver rapidement une information fiable dans un grand volume de documents métiers, sans lire chaque document ?",
+    role: "Conception de l’architecture RAG : ingestion et découpage des documents, embeddings avec Sentence Transformers, recherche sémantique, génération de réponses par LLM et exposition via une API FastAPI.",
+    result: "Un assistant qui répond en langage naturel à des questions sur des documents métiers, en citant les sources utilisées.",
   },
-  bi: {
-    problem: "Comment transformer des données de ventes et de stocks en indicateurs lisibles pour suivre les performances commerciales ?",
-    role: "Conception d’un entrepôt de données en schéma étoile, développement de tableaux de bord Power BI et mise en place d’indicateurs commerciaux.",
-    result: "Des analyses décisionnelles des ventes, des stocks et des performances commerciales à partir de données d’entreprise.",
+  vision: {
+    problem: "Comment identifier automatiquement un produit à partir d’une simple image et en produire une description exploitable ?",
+    role: "Prétraitement des images avec OpenCV, identification des objets avec des modèles Hugging Face Transformers, génération automatique des descriptions et caractéristiques, exposition via FastAPI.",
+    result: "Une application de vision par ordinateur qui transforme une image en informations structurées sur le produit.",
   },
-  academic: {
-    problem: "Comment structurer les principales activités d’un établissement académique autour de ses acteurs, de ses processus et de règles métier cohérentes ?",
-    role: "Identification des acteurs et besoins, modélisation des processus, structuration des données et définition des principales règles métier.",
-    result: "Un système d’information académique pensé pour automatiser les opérations administratives et renforcer la traçabilité.",
+  fraud: {
+    problem: "Comment repérer, parmi un grand nombre de transactions, celles qui sont potentiellement frauduleuses ou anormales ?",
+    role: "Nettoyage et préparation des données transactionnelles avec Pandas et NumPy, entraînement et évaluation d’un modèle Random Forest avec scikit-learn.",
+    result: "Un modèle de classification supervisée qui distingue les transactions normales des transactions potentiellement frauduleuses.",
   },
 };
 
@@ -48,7 +48,7 @@ const featuredExperience = experienceList?.querySelector(".experience-featured")
 if (experienceList && featuredExperience) {
   const currentRole = document.createElement("article");
   currentRole.className = "experience-item";
-  currentRole.innerHTML = '<div class="experience-meta"><span class="experience-index">01</span><span>CDI · 08/2026 — PRÉSENT</span></div><div class="experience-main"><div class="experience-title"><div><p class="eyebrow">Data Engineer</p><h3>Capgemini Engineering</h3><p class="experience-location">Casablanca, Maroc</p></div></div><p class="experience-description">Conception et optimisation de solutions d’intégration et d’exploitation des données.</p><div class="experience-points"><span>Automatisation des flux pour les besoins décisionnels des métiers</span><span>Amélioration de la qualité, de la fiabilité et de la gouvernance des données</span><span>Collaboration avec les équipes fonctionnelles et techniques sur des projets de transformation digitale</span></div><div class="inline-tags"><span>Data Engineering</span><span>Intégration de données</span><span>Qualité des données</span><span>Gouvernance</span></div></div>';
+  currentRole.innerHTML = '<div class="experience-meta"><span class="experience-index">01</span><span>CDI · 08/2026 — PRÉSENT</span></div><div class="experience-main"><div class="experience-title"><div><p class="eyebrow">Data Engineer</p><h3>Capgemini Engineering</h3><p class="experience-location">Casablanca, Maroc</p></div></div><p class="experience-description">Conception et optimisation de pipelines d’intégration de données.</p><div class="experience-points"><span>Automatisation des flux de données et tableaux de bord décisionnels pour les équipes métier</span><span>Contrôle de la qualité, de la fiabilité et de la gouvernance des données</span></div><div class="inline-tags"><span>Python</span><span>SQL</span><span>Power BI</span><span>Excel</span></div></div>';
   experienceList.insertBefore(currentRole, featuredExperience);
 
   const pfeDate = featuredExperience.querySelector(".experience-meta span:last-child");
@@ -74,7 +74,7 @@ if (experienceList && featuredExperience) {
 }
 
 const heroRole = document.querySelector(".hero-role");
-if (heroRole) heroRole.textContent = "Ingénieur Informatique — Parcours MIAGE";
+if (heroRole) heroRole.textContent = "Ingénieur Data — Parcours MIAGE";
 const heroHeading = document.querySelector("#hero-title");
 if (heroHeading && !document.querySelector(".hero-portrait")) {
   const nameRow = document.createElement("div");
@@ -91,15 +91,15 @@ if (heroHeading && !document.querySelector(".hero-portrait")) {
 }
 const heroLead = document.querySelector(".hero-lead");
 if (heroLead) {
-  heroLead.textContent = "À l’interface entre les besoins métier, les systèmes d’information et les solutions ERP, avec un socle technique en BI, Data et développement applicatif.";
+  heroLead.textContent = "Data Engineer chez Capgemini Engineering, je conçois des solutions qui combinent pipelines de données, machine learning et LLM pour aider à la décision.";
 }
 const heroGoal = document.createElement("div");
 heroGoal.className = "hero-goal";
-heroGoal.innerHTML = "<strong>Objectif</strong><span>Master 2 Management des Systèmes d’Information — orientation ERP</span>";
+heroGoal.innerHTML = "<strong>Objectif</strong><span>Master 2 Intelligence Artificielle & Science des Données — rentrée 2027</span>";
 heroLead?.after(heroGoal);
 const heroTopics = document.querySelector(".topic-row");
 if (heroTopics) {
-  heroTopics.replaceChildren(...["Systèmes d’Information", "ERP", "Business Analysis", "Transformation digitale"]
+  heroTopics.replaceChildren(...["Intelligence artificielle", "Machine Learning", "LLM & RAG", "Data Engineering"]
     .map((topic) => {
       const badge = document.createElement("span");
       badge.textContent = topic;
@@ -107,22 +107,22 @@ if (heroTopics) {
     }));
 }
 const heroStatus = document.querySelector(".hero-contact > span:first-child");
-if (heroStatus) heroStatus.textContent = "Master 2 Management des SI · orientation ERP";
+if (heroStatus) heroStatus.textContent = "Candidat Master 2 IA & Data · rentrée 2027";
 const heroContactLink = document.querySelector(".hero-contact a");
 if (heroContactLink) {
   heroContactLink.href = "#objectif";
-  heroContactLink.textContent = "Alternance en France →";
+  heroContactLink.textContent = "Mon projet d’études →";
 }
 const visualKicker = document.querySelector(".visual-kicker");
 const visualLive = document.querySelector(".visual-live");
 const previewLabel = document.querySelector(".preview-label");
 const previewHeading = document.querySelector(".preview-heading h2");
-if (visualKicker) visualKicker.textContent = "SYSTÈMES D’INFORMATION";
-if (visualLive) visualLive.textContent = "ERP / SI";
-if (previewLabel) previewLabel.textContent = "PROCESSUS · INTÉGRATION · PILOTAGE";
-if (previewHeading) previewHeading.textContent = "Flux d’information";
+if (visualKicker) visualKicker.textContent = "DATA & IA APPLIQUÉE";
+if (visualLive) visualLive.textContent = "IA / DATA";
+if (previewLabel) previewLabel.textContent = "DONNÉES · MODÈLES · DÉCISION";
+if (previewHeading) previewHeading.textContent = "Pipeline IA";
 const previewMetrics = document.querySelectorAll(".preview-metrics > div");
-const heroMetrics = [["ERP", "Odoo", "Processus métier"], ["Pilotage", "KPI", "Aide à la décision"]];
+const heroMetrics = [["Machine Learning", "Prédiction", "Random Forest · scikit-learn"], ["IA générative", "LLM", "RAG · agents"]];
 previewMetrics.forEach((metric, index) => {
   const [label, value, detail] = heroMetrics[index] ?? [];
   if (!label) return;
@@ -132,8 +132,8 @@ previewMetrics.forEach((metric, index) => {
 });
 const heroFlow = document.createElement("div");
 heroFlow.className = "hero-system-flow";
-heroFlow.setAttribute("aria-label", "Processus métier, ERP Odoo, API, données, BI et KPI");
-const systemStages = [["Processus", "Métier"], ["ERP", "Odoo"], ["API", "Intégration"], ["Données", "SQL"], ["BI · KPI", "Pilotage"]];
+heroFlow.setAttribute("aria-label", "Données, pipeline, modèle de machine learning, LLM et décision");
+const systemStages = [["Données", "Collecte"], ["Pipeline", "Python · SQL"], ["Modèle ML", "scikit-learn"], ["LLM", "RAG · agents"], ["Décision", "Dashboard"]];
 systemStages.forEach(([name, detail], index) => {
   const stage = document.createElement("div");
   stage.className = `hero-system-step${index === 1 ? " system-focus" : ""}${index === 4 ? " decision-focus" : ""}`;
@@ -156,8 +156,8 @@ const visualCaption = document.querySelector(".visual-caption");
 if (visualCaption) {
   const caption = visualCaption.querySelector("span:first-child");
   const index = visualCaption.querySelector("span:last-child");
-  if (caption) caption.textContent = "PROCESSUS → ERP → DONNÉES → PILOTAGE";
-  if (index) index.textContent = "SI / 01";
+  if (caption) caption.textContent = "DONNÉES → MODÈLES → DÉCISION";
+  if (index) index.textContent = "IA / 01";
 }
 const previewFooter = document.querySelector(".preview-footer");
 if (previewFooter) {
@@ -166,12 +166,12 @@ if (previewFooter) {
   if (signal) {
     const marker = document.createElement("b");
     marker.className = "flow-marker";
-    signal.replaceChildren(marker, document.createTextNode("Flux intégrés"));
+    signal.replaceChildren(marker, document.createTextNode("Pipeline de bout en bout"));
   }
-  if (decision) decision.textContent = "Performance métier";
+  if (decision) decision.textContent = "Aide à la décision";
 }
 const visualIndex = document.querySelector(".visual-index");
-if (visualIndex) visualIndex.textContent = "SI";
+if (visualIndex) visualIndex.textContent = "IA";
 
 const objectiveSection = document.querySelector(".objective-band");
 if (objectiveSection) objectiveSection.id = "objectif";
@@ -191,8 +191,8 @@ const sequenceText = document.querySelector(".intro-inner p");
 if (sequenceText) {
   const sequence = document.createElement("div");
   sequence.className = "position-sequence";
-  sequence.setAttribute("aria-label", "MIAGE, systèmes d’information, ERP, Business Analysis, transformation digitale");
-  ["MIAGE", "Systèmes d’information", "ERP", "Business Analysis", "Transformation digitale"]
+  sequence.setAttribute("aria-label", "MIAGE, Data Engineering, Machine Learning, IA générative, Master 2 IA");
+  ["MIAGE", "Data Engineering", "Machine Learning", "IA générative", "Master 2 IA"]
     .forEach((label, index, stages) => {
       const stage = document.createElement("span");
       stage.className = "position-stage";
@@ -208,23 +208,22 @@ if (sequenceText) {
   sequenceText.replaceWith(sequence);
 }
 const positioningNote = document.querySelector(".intro-note");
-if (positioningNote) positioningNote.textContent = "Du besoin métier au système d’information, puis du système d’information au pilotage.";
+if (positioningNote) positioningNote.textContent = "Des données bien structurées aux modèles qui aident à décider.";
 
 const profileTitle = document.querySelector("#profil-title");
 if (profileTitle) {
   profileTitle.replaceChildren(
-    document.createTextNode("Comprendre les organisations."),
+    document.createTextNode("Des données fiables."),
     document.createElement("br"),
-    document.createTextNode("Transformer les systèmes. Piloter l’information."),
+    document.createTextNode("Des modèles utiles. Des décisions éclairées."),
   );
 }
 const profileCopy = document.querySelector(".profile-copy");
 if (profileCopy) {
   const paragraphs = [
-    "Ingénieur en Génie Informatique, parcours MIAGE, je m’intéresse à la manière dont les systèmes d’information structurent les processus, centralisent l’information et améliorent le pilotage des organisations.",
-    "Mes expériences en développement applicatif, en Business Intelligence et dans la conception de solutions numériques m’ont amené à travailler sur les besoins métier, la structuration de l’information et l’automatisation.",
-    "Cette double approche, fonctionnelle et technique, constitue le socle de mon projet professionnel. Mon objectif n’est pas de me spécialiser uniquement dans le développement, mais de relier la technologie aux enjeux métier, organisationnels et décisionnels.",
-    "Je souhaite approfondir cette orientation en Master 2 Management des Systèmes d’Information, avec un intérêt particulier pour les ERP, la Business Analysis, le conseil SI et la transformation digitale.",
+    "Ingénieur en Génie Informatique (parcours MIAGE, EMSI Casablanca) et Data Engineer chez Capgemini Engineering, je travaille sur toute la chaîne de la donnée : collecte, préparation, modélisation et restitution.",
+    "Mon PFE m’a permis de concevoir une plateforme prédictive qui combine machine learning, LLM et pipelines de données pour des programmes automobiles Stellantis. Mes projets académiques couvrent aussi le RAG, la vision par ordinateur et la détection de fraude.",
+    "Je souhaite approfondir l’intelligence artificielle et le big data en Master 2, pour évoluer vers un poste d’ingénieur IA / Data.",
   ];
   profileCopy.replaceChildren(...paragraphs.map((text) => {
     const paragraph = document.createElement("p");
@@ -236,10 +235,10 @@ if (profileCopy) {
 const bridge = document.querySelector(".bridge");
 if (bridge) {
   const pillars = [
-    ["Comprendre", "Besoins métier · utilisateurs · processus · organisation", "Identifier les besoins et représenter les processus avant de concevoir une solution."],
-    ["Analyser", "Systèmes d’information · flux · données", "Structurer l’information et traduire les besoins métier en exigences fonctionnelles."],
-    ["Transformer", "ERP · digitalisation · intégration", "Améliorer les processus et la circulation de l’information avec des solutions SI."],
-    ["Piloter", "KPI · BI · analyse · décision", "Transformer les données en indicateurs utiles au suivi de la performance."],
+    ["Collecter", "Pipelines · Python · SQL", "Automatiser l’ingestion et garantir des données propres et fiables."],
+    ["Modéliser", "Machine Learning · scikit-learn", "Entraîner et évaluer des modèles prédictifs adaptés au problème."],
+    ["Augmenter", "LLM · RAG · agents", "Intégrer l’IA générative pour analyser, résumer et recommander."],
+    ["Décider", "Dashboards · Power BI · indicateurs", "Restituer les résultats sous une forme utile à la décision."],
   ];
   bridge.replaceChildren(...pillars.map(([title, scope, description], index) => {
     const step = document.createElement("div");
@@ -254,13 +253,13 @@ if (featuredExperience) {
   const projectName = featuredExperience.querySelector(".experience-project-name");
   const description = featuredExperience.querySelector(".experience-description");
   if (pfeType) pfeType.textContent = "Stagiaire Data & Intelligence Artificielle";
-  if (projectName) projectName.textContent = "PDE — Solution digitale de pilotage des projets industriels";
-  if (description) description.textContent = "Conception d’une solution intelligente pour centraliser les informations projet, suivre les jalons, repérer les risques et faciliter le pilotage.";
+  if (projectName) projectName.textContent = "PDE — Predictive Delay Engine";
+  if (description) description.textContent = "Plateforme prédictive de suivi des risques projets pour des programmes automobiles Stellantis (MG2 Engineering).";
   const contributions = [
-    "Analyse du besoin et compréhension du processus de suivi projet",
-    "Structuration des données et mise en place d’indicateurs de pilotage",
-    "Automatisation de vérifications métier et développement d’un moteur d’analyse des risques",
-    "Conception d’une interface multi-profils et exploration de l’IA comme assistance utilisateur",
+    "Prototype de modèle de prédiction des retards de jalons (Random Forest, scikit-learn), puis conception d’un score de risque interprétable",
+    "Intégration de LLM (Mistral et Qwen2.5 via Ollama, Azure OpenAI) pour générer recommandations et rapports : prompt engineering et validation des sorties",
+    "Architecture agentique : corrélation des risques, priorisation et relances automatiques à trois niveaux",
+    "Pipeline d’ingestion automatisé (n8n, déduplication SHA-256), API FastAPI, base SQLite et tableau de bord Streamlit",
   ];
   const points = featuredExperience.querySelector(".experience-points");
   points?.replaceChildren(...contributions.map((text) => {
@@ -268,7 +267,7 @@ if (featuredExperience) {
     item.textContent = text;
     return item;
   }));
-  const technologies = ["Python", "FastAPI", "Streamlit", "SQL", "Machine Learning", "IA générative"];
+  const technologies = ["Python", "scikit-learn", "Random Forest", "LLM / Ollama", "Azure OpenAI", "FastAPI", "n8n", "Streamlit", "SQLite"];
   const tags = featuredExperience.querySelector(".experience-main > .inline-tags");
   tags?.replaceChildren(...technologies.map((text) => {
     const tag = document.createElement("span");
@@ -314,7 +313,7 @@ for (const experience of experienceList?.querySelectorAll(".experience-item") ??
   }));
 }
 
-const projectOrder = ["erpconnect", "pde", "bi", "academic"];
+const projectOrder = ["pde", "rag", "vision", "fraud"];
 const projectGrid = document.querySelector(".project-grid");
 if (projectGrid) {
   const projectCards = projectOrder.map((key) => projectGrid.querySelector(`[data-project="${key}"]`)?.closest(".project-card"));
@@ -324,25 +323,25 @@ if (projectGrid) {
   });
 }
 const projectCopy = {
-  erpconnect: {
-    type: "ERP · PROCESSUS MÉTIER · INTÉGRATION SI",
-    title: "ERPConnect",
-    description: "Explorer l’intégration d’Odoo avec les applications métier et les outils décisionnels pour centraliser l’information et suivre les KPI.",
-  },
   pde: {
-    type: "SYSTÈME D’INFORMATION · PILOTAGE · IA APPLIQUÉE",
+    type: "PFE · MACHINE LEARNING · LLM · AGENTS",
     title: "PDE — Predictive Delay Engine",
-    description: "Centraliser les données projet, suivre les jalons et transformer les signaux de risque en informations utiles au pilotage.",
+    description: "Anticiper les retards de jalons, prioriser les risques et générer des recommandations avec des LLM.",
   },
-  bi: {
-    type: "BI · DATA WAREHOUSE · KPI · POWER BI",
-    title: "Business Intelligence & aide à la décision",
-    description: "Transformer des données de ventes et de stocks en analyses décisionnelles grâce à un schéma en étoile et des tableaux de bord.",
+  rag: {
+    type: "IA GÉNÉRATIVE · RAG · RECHERCHE SÉMANTIQUE",
+    title: "Assistant IA d’analyse documentaire",
+    description: "Interroger des documents métiers en langage naturel et obtenir des réponses contextualisées avec leurs sources.",
   },
-  academic: {
-    type: "ANALYSE FONCTIONNELLE · PROCESSUS · SI",
-    title: "Système de gestion académique",
-    description: "Modéliser les acteurs, processus et règles métier d’un système d’information pour un établissement académique.",
+  vision: {
+    type: "VISION PAR ORDINATEUR · TRANSFORMERS",
+    title: "Reconnaissance d’images de produits",
+    description: "Identifier des objets à partir d’images et générer automatiquement leurs descriptions et caractéristiques.",
+  },
+  fraud: {
+    type: "MACHINE LEARNING · CLASSIFICATION · DATA SCIENCE",
+    title: "Détection de transactions frauduleuses",
+    description: "Classer les transactions comme normales ou potentiellement frauduleuses avec un modèle Random Forest.",
   },
 };
 for (const card of projectGrid?.querySelectorAll(".project-card") ?? []) {
@@ -355,12 +354,12 @@ for (const card of projectGrid?.querySelectorAll(".project-card") ?? []) {
 }
 
 const skillGroups = [
-  ["Management des Systèmes d’Information", "Analyse fonctionnelle · Analyse des besoins · Processus métier · Modélisation SI · UML · Gestion de projet SI · Transformation digitale", "SI"],
-  ["ERP & intégration", "ERP · Odoo · Processus métier · Intégration SI · API · Synchronisation des données · Flux d’information", "ERP"],
-  ["Business Intelligence", "SQL · Power BI · ETL · Data Warehouse · Schéma en étoile · KPI · Reporting · Aide à la décision", "BI"],
-  ["Pilotage & analyse", "Analyse de données · Suivi de performance · Indicateurs · Analyse des risques · Reporting projet · Aide au pilotage", "KPI"],
-  ["Socle technique", "Python · Java · Spring Boot · FastAPI · React · Git · PostgreSQL · MySQL · SQL Server · Oracle", "DEV"],
-  ["IA appliquée", "Machine Learning · Random Forest · LLM · IA générative · Automatisation intelligente", "IA"],
+  ["IA & Machine Learning", "Apprentissage supervisé · Random Forest · scikit-learn · Détection d’anomalies · Vision par ordinateur (OpenCV) · Hugging Face Transformers", "IA"],
+  ["IA générative & LLM", "LLM (Ollama, Azure OpenAI) · RAG · LangChain · Sentence Transformers · Recherche sémantique · Prompt engineering · Systèmes agentiques", "LLM"],
+  ["Data", "Python (Pandas, NumPy) · SQL · Pipelines ETL · Data Warehouse · PostgreSQL · MySQL · SQL Server · Oracle · SQLite", "DATA"],
+  ["Développement", "FastAPI · Streamlit · Java Spring Boot · React · Git", "DEV"],
+  ["Visualisation & décision", "Power BI · Plotly · Excel · Indicateurs · Tableaux de bord", "BI"],
+  ["Méthodes", "Modélisation UML · Gestion de projet", "UML"],
 ];
 const skillsGrid = document.querySelector(".skills-grid");
 if (skillsGrid) {
@@ -378,10 +377,10 @@ if (education) {
   if (institution) institution.textContent = "EMSI — École Marocaine des Sciences de l’Ingénieur, Casablanca";
   const summary = document.createElement("p");
   summary.className = "education-summary";
-  summary.textContent = "Formation couvrant l’informatique, les systèmes d’information, les bases de données, le développement logiciel, la Business Intelligence et la gestion de projet.";
+  summary.textContent = "Niveau Bac+5. Modules principaux : Machine Learning, Deep Learning, statistiques, programmation Python, bases de données et Business Intelligence.";
   education.querySelector(".inline-tags")?.before(summary);
   const tags = education.querySelector(".inline-tags");
-  tags?.replaceChildren(...["Systèmes d’information", "Business Intelligence", "Gestion de projet", "Développement applicatif", "Data & IA"].map((text) => {
+  tags?.replaceChildren(...["Machine Learning", "Deep Learning", "Statistiques", "Python", "Bases de données & BI"].map((text) => {
     const tag = document.createElement("span");
     tag.textContent = text;
     return tag;
@@ -393,14 +392,14 @@ if (objectiveInner) {
   const eyebrow = objectiveInner.querySelector(".eyebrow");
   const title = objectiveInner.querySelector("h2");
   const summary = objectiveInner.querySelector("p:not(.eyebrow)");
-  if (eyebrow) eyebrow.textContent = "M2 · ALTERNANCE · PROJET PROFESSIONNEL";
-  if (title) title.textContent = "Mon projet professionnel";
-  if (summary) summary.textContent = "Construire un profil à l’interface entre les métiers et les systèmes d’information, avec une spécialisation progressive en ERP, Business Analysis et transformation digitale.";
+  if (eyebrow) eyebrow.textContent = "MASTER 2 · PROJET D’ÉTUDES · RENTRÉE 2027";
+  if (title) title.textContent = "Mon projet d’études";
+  if (summary) summary.textContent = "Approfondir l’intelligence artificielle et le big data en Master 2 en France, pour devenir ingénieur IA / Data.";
   objectiveInner.querySelector(".objective-tags")?.remove();
   const objectives = [
-    ["01", "Objectif académique", "Master 2 — Management des Systèmes d’Information", "Orientation ERP."],
-    ["02", "En parallèle", "Alternance en France", "Contribuer à des missions en systèmes d’information, ERP, conseil SI, pilotage de projets ou transformation digitale."],
-    ["03", "À moyen terme", "Évoluer à l’interface", "Consultant SI · Consultant fonctionnel ERP · Business Analyst · Chef de projet SI"],
+    ["01", "Objectif académique", "Master 2 Intelligence Artificielle & Science des Données", "Machine learning, deep learning et big data, en formation initiale."],
+    ["02", "Ce que j’apporte", "Une expérience concrète de l’IA appliquée", "Machine learning, LLM et pipelines de données en contexte industriel chez Capgemini Engineering."],
+    ["03", "À moyen terme", "Ingénieur IA / Data", "Ingénieur IA · Consultant spécialisé IA / Data · Chef de projet technique"],
   ];
   const grid = document.createElement("div");
   grid.className = "objective-grid";
@@ -427,10 +426,10 @@ const contactTitle = document.querySelector("#contact-title");
 if (contactTitle) contactTitle.textContent = "Construisons la prochaine étape";
 const contactCopy = document.querySelector(".contact-main > p:not(.eyebrow)");
 if (contactCopy) {
-  contactCopy.textContent = "À la recherche d’une alternance en Management des Systèmes d’Information, ERP, Business Analysis ou transformation digitale dans le cadre de mon futur Master 2.";
+  contactCopy.textContent = "Candidat à un Master 2 en Intelligence Artificielle et Science des Données pour la rentrée 2027. Je serais heureux d’échanger sur mon parcours et mes projets.";
   const contactSupport = document.createElement("p");
   contactSupport.className = "contact-support";
-  contactSupport.textContent = "Je souhaite mettre mon socle informatique au service de problématiques métier, SI et ERP.";
+  contactSupport.textContent = "Data, machine learning, LLM : je souhaite approfondir ces sujets dans un cadre académique exigeant.";
   contactCopy.after(contactSupport);
 }
 
