@@ -4,15 +4,19 @@ const contact = {
   linkedin: "https://www.linkedin.com/in/ibrahim-hanna-0030b52a9/",
   github: "https://github.com/Ibrahim-hanna",
 };
-const cvUrl = "public/documents/Ibrahim%20HANNAFianle.pdf";
+const cvUrl = "public/documents/CV_Ibrahim_HANNA_IA_Data.pdf";
 const certifications = [
-  { issuer: "IBM · Credly", title: "Machine Learning with Python", url: "https://www.credly.com/badges/396446ea-ff92-4125-865a-d381164e0251" },
-  { issuer: "HKUST", title: "Software Engineering: Modeling Software Systems using UML", url: "https://www.coursera.org/account/accomplishments/verify/P4WUXFKRLSBK" },
-  { issuer: "Coursera", title: "Software Engineering: Software Design and Project Management", url: "https://www.coursera.org/account/accomplishments/verify/78YVDP7N7562" },
-  { issuer: "Packt · Coursera · 29 décembre 2025", title: "Advanced Spring Cloud Microservices & Deployment with Docker", url: "https://coursera.org/share/1e21b4789039efef92e47bb920096682" },
-  { issuer: "Coursera", title: "React Basics", url: "https://www.coursera.org/account/accomplishments/verify/QST1MF3OUPV6" },
-  { issuer: "Coursera", title: "Introduction to Java and Object-Oriented Programming", url: "https://www.coursera.org/account/accomplishments/verify/DRVBIQHX1Z45" },
-  { issuer: "Coursera", title: "SAP Professional Fundamentals", url: "https://www.coursera.org/account/accomplishments/verify/EJEUT62JG3AK" },
+  { issuer: "IBM · Credly · 2024", title: "Machine Learning with Python", url: "https://www.credly.com/badges/396446ea-ff92-4125-865a-d381164e0251" },
+  { issuer: "University of Michigan · Coursera · mai 2024", title: "Programming for Everybody (Getting Started with Python)" },
+  { issuer: "EPFL · Coursera · janvier 2024", title: "Introduction à la programmation orientée objet (en C++)" },
+  { issuer: "Johns Hopkins University · Coursera · mai 2024", title: "The Unix Workbench" },
+  { issuer: "UC Irvine · Coursera · avril 2023", title: "The Arduino Platform and C Programming" },
+  { issuer: "University of Pennsylvania · Coursera · janvier 2025", title: "Introduction to Java and Object-Oriented Programming", url: "https://www.coursera.org/account/accomplishments/verify/DRVBIQHX1Z45" },
+  { issuer: "Packt · Coursera · décembre 2025", title: "Advanced Spring Cloud Microservices & Deployment with Docker", url: "https://coursera.org/share/1e21b4789039efef92e47bb920096682" },
+  { issuer: "HKUST · Coursera · mai 2024", title: "Software Engineering: Software Design and Project Management", url: "https://www.coursera.org/account/accomplishments/verify/78YVDP7N7562" },
+  { issuer: "HKUST · Coursera · mai 2024", title: "Software Engineering: Modeling Software Systems using UML", url: "https://www.coursera.org/account/accomplishments/verify/P4WUXFKRLSBK" },
+  { issuer: "SAP · Coursera · octobre 2025", title: "SAP Professional Fundamentals", url: "https://www.coursera.org/account/accomplishments/verify/EJEUT62JG3AK" },
+  { issuer: "Meta · Coursera · janvier 2025", title: "React Basics", url: "https://www.coursera.org/account/accomplishments/verify/QST1MF3OUPV6" },
 ];
 const projectDetails = {
   pde: {
@@ -24,6 +28,11 @@ const projectDetails = {
     problem: "Comment retrouver rapidement une information fiable dans un grand volume de documents métiers, sans lire chaque document ?",
     role: "Conception de l’architecture RAG : ingestion et découpage des documents, embeddings avec Sentence Transformers, recherche sémantique, génération de réponses par LLM et exposition via une API FastAPI.",
     result: "Un assistant qui répond en langage naturel à des questions sur des documents métiers, en citant les sources utilisées.",
+  },
+  sales: {
+    problem: "Une entreprise reçoit chaque jour des fichiers de ventes de plusieurs magasins, parfois incomplets, incohérents ou dupliqués : difficile d’obtenir des indicateurs fiables.",
+    role: "Pipeline ETL en Python et Pandas (import CSV/Excel, nettoyage, doublons, valeurs manquantes, normalisation, contrôles qualité), data warehouse PostgreSQL en schéma en étoile, dashboard Power BI et détection d’anomalies de ventes avec Isolation Forest. Architecture volontairement simple (Python, SQL, PostgreSQL) pour maîtriser toute la chaîne avant d’ajouter un orchestrateur.",
+    result: "Une plateforme qui centralise les ventes, fournit des indicateurs fiables (chiffre d’affaires, évolution, panier moyen, performances par produit et par magasin, qualité des données) et signale les variations inhabituelles à examiner.",
   },
   vision: {
     problem: "Comment identifier automatiquement un produit à partir d’une simple image et en produire une description exploitable ?",
@@ -64,11 +73,11 @@ if (experienceList && featuredExperience) {
     const role = experience.querySelector(".experience-title .eyebrow");
     if (company === "Edetsecom") {
       if (date) date.textContent = "07/2025 — 08/2025";
-      if (role) role.textContent = "Stagiaire Développeur Full Stack Java";
+      if (role) role.textContent = "Stagiaire Data";
     }
     if (company === "Novopharma") {
       if (date) date.textContent = "07/2024";
-      if (role) role.textContent = "Stagiaire Développeur Desktop";
+      if (role) role.textContent = "Stagiaire Développeur";
     }
   }
 }
@@ -95,11 +104,11 @@ if (heroLead) {
 }
 const heroGoal = document.createElement("div");
 heroGoal.className = "hero-goal";
-heroGoal.innerHTML = "<strong>Objectif</strong><span>Master 2 Intelligence Artificielle & Science des Données — rentrée 2027</span>";
+heroGoal.innerHTML = "<strong>Objectif</strong><span>Master 2 IA, Data Science & Big Data — rentrée 2027</span>";
 heroLead?.after(heroGoal);
 const heroTopics = document.querySelector(".topic-row");
 if (heroTopics) {
-  heroTopics.replaceChildren(...["Intelligence artificielle", "Machine Learning", "LLM & RAG", "Data Engineering"]
+  heroTopics.replaceChildren(...["Intelligence artificielle", "Machine Learning", "LLM & RAG", "Data Engineering", "Business Intelligence"]
     .map((topic) => {
       const badge = document.createElement("span");
       badge.textContent = topic;
@@ -221,9 +230,9 @@ if (profileTitle) {
 const profileCopy = document.querySelector(".profile-copy");
 if (profileCopy) {
   const paragraphs = [
-    "Ingénieur en Génie Informatique (parcours MIAGE, EMSI Casablanca) et Data Engineer chez Capgemini Engineering, je travaille sur toute la chaîne de la donnée : collecte, préparation, modélisation et restitution.",
-    "Mon PFE m’a permis de concevoir une plateforme prédictive qui combine machine learning, LLM et pipelines de données pour des programmes automobiles Stellantis. Mes projets académiques couvrent aussi le RAG, la vision par ordinateur et la détection de fraude.",
-    "Je souhaite approfondir l’intelligence artificielle et le big data en Master 2, pour évoluer vers un poste d’ingénieur IA / Data.",
+    "Ingénieur en Génie Informatique (parcours MIAGE, EMSI Casablanca) et Data Engineer chez Capgemini Engineering, je travaille sur toute la chaîne de la donnée : nettoyage, pipelines ETL, entrepôts de données, business intelligence et machine learning.",
+    "Mon PFE m’a permis de concevoir une plateforme prédictive qui combine machine learning, LLM et pipelines de données pour des programmes automobiles Stellantis. Mes projets académiques couvrent aussi le data engineering et la BI (entrepôt de données, Power BI), le RAG, la détection de fraude et la vision par ordinateur.",
+    "Je souhaite approfondir l’intelligence artificielle, la science des données et le big data en Master 2, pour devenir ingénieur IA.",
   ];
   profileCopy.replaceChildren(...paragraphs.map((text) => {
     const paragraph = document.createElement("p");
@@ -278,13 +287,13 @@ if (featuredExperience) {
 
 const experienceCopy = {
   Edetsecom: {
-    description: "Participation à la conception et au développement de solutions applicatives destinées à digitaliser et structurer des processus métier.",
-    points: ["Compréhension des besoins fonctionnels", "Conception d’API et de fonctionnalités métier", "Gestion et structuration des données", "Amélioration des processus existants"],
-    technologies: ["Java", "Spring Boot", "SQL", "REST API", "Git"],
+    description: "Développement en Python d’une plateforme de suivi des projets, à partir de données préalablement analysées, nettoyées et normalisées.",
+    points: ["Analyse, nettoyage et normalisation des données de suivi des projets", "Développement en Python d’une plateforme de suivi des projets, reposant sur une base de données relationnelle", "Analyse des besoins fonctionnels et digitalisation de processus métier"],
+    technologies: ["Python", "Nettoyage & normalisation", "Base de données relationnelle", "SQL"],
   },
   Novopharma: {
-    description: "Contribution à une application de gestion interne à partir des besoins des utilisateurs.",
-    points: ["Analyse des besoins et des traitements", "Automatisation de tâches métier", "Structuration des données", "Développement de fonctionnalités de gestion"],
+    description: "Développement d’une plateforme de gestion des remises mensuelles et automatisation de traitements métier.",
+    points: ["Analyse des besoins et des traitements métier", "Développement de la plateforme de gestion des remises mensuelles", "Automatisation de traitements métier"],
     technologies: ["Développement applicatif", "Base de données", "Automatisation"],
   },
 };
@@ -313,7 +322,7 @@ for (const experience of experienceList?.querySelectorAll(".experience-item") ??
   }));
 }
 
-const projectOrder = ["pde", "rag", "vision", "fraud"];
+const projectOrder = ["pde", "sales", "rag", "fraud", "vision"];
 const projectGrid = document.querySelector(".project-grid");
 if (projectGrid) {
   const projectCards = projectOrder.map((key) => projectGrid.querySelector(`[data-project="${key}"]`)?.closest(".project-card"));
@@ -332,6 +341,11 @@ const projectCopy = {
     type: "IA GÉNÉRATIVE · RAG · RECHERCHE SÉMANTIQUE",
     title: "Assistant IA d’analyse documentaire",
     description: "Interroger des documents métiers en langage naturel et obtenir des réponses contextualisées avec leurs sources.",
+  },
+  sales: {
+    type: "DATA ENGINEERING · DATA WAREHOUSE · BI",
+    title: "Plateforme d’analyse des données commerciales",
+    description: "Pipeline ETL, entrepôt de données en schéma en étoile, dashboard Power BI et détection d’anomalies de ventes.",
   },
   vision: {
     type: "VISION PAR ORDINATEUR · TRANSFORMERS",
@@ -354,10 +368,11 @@ for (const card of projectGrid?.querySelectorAll(".project-card") ?? []) {
 }
 
 const skillGroups = [
-  ["IA & Machine Learning", "Apprentissage supervisé · Random Forest · scikit-learn · Détection d’anomalies · Vision par ordinateur (OpenCV) · Hugging Face Transformers", "IA"],
+  ["IA & Machine Learning", "Apprentissage supervisé · Random Forest · scikit-learn · Détection d’anomalies (Isolation Forest) · Vision par ordinateur (OpenCV) · Hugging Face Transformers", "IA"],
   ["IA générative & LLM", "LLM (Ollama, Azure OpenAI) · RAG · LangChain · Sentence Transformers · Recherche sémantique · Prompt engineering · Systèmes agentiques", "LLM"],
-  ["Data", "Python (Pandas, NumPy) · SQL · Pipelines ETL · Data Warehouse · PostgreSQL · MySQL · SQL Server · Oracle · SQLite", "DATA"],
-  ["Développement", "FastAPI · Streamlit · Java Spring Boot · React · Git", "DEV"],
+  ["Data", "Pipelines ETL · Nettoyage et normalisation des données · Entrepôt de données (schéma en étoile) · PostgreSQL · MySQL · SQL Server · Oracle · SQLite · Pandas · NumPy", "DATA"],
+  ["Langages & environnement", "Python · SQL · C/C++ · Java · JavaScript · Linux · Shell · Git · Docker", "CODE"],
+  ["Développement", "FastAPI · Streamlit · Java Spring Boot · React", "DEV"],
   ["Visualisation & décision", "Power BI · Plotly · Excel · Indicateurs · Tableaux de bord", "BI"],
   ["Méthodes", "Modélisation UML · Gestion de projet", "UML"],
 ];
@@ -377,10 +392,10 @@ if (education) {
   if (institution) institution.textContent = "EMSI — École Marocaine des Sciences de l’Ingénieur, Casablanca";
   const summary = document.createElement("p");
   summary.className = "education-summary";
-  summary.textContent = "Niveau Bac+5. Modules principaux : Machine Learning, Deep Learning, statistiques, programmation Python, bases de données et Business Intelligence.";
+  summary.textContent = "Niveau Bac+5. Informatique et données : Machine Learning, Deep Learning, bases de données et Business Intelligence, algorithmique et complexité, programmation (Python, C/C++, Java). Mathématiques : algèbre, analyse, probabilités et statistiques, recherche opérationnelle, logique.";
   education.querySelector(".inline-tags")?.before(summary);
   const tags = education.querySelector(".inline-tags");
-  tags?.replaceChildren(...["Machine Learning", "Deep Learning", "Statistiques", "Python", "Bases de données & BI"].map((text) => {
+  tags?.replaceChildren(...["Machine Learning", "Deep Learning", "Bases de données & BI", "Algorithmique", "Probabilités & statistiques", "Recherche opérationnelle"].map((text) => {
     const tag = document.createElement("span");
     tag.textContent = text;
     return tag;
@@ -397,8 +412,8 @@ if (objectiveInner) {
   if (summary) summary.textContent = "Approfondir l’intelligence artificielle et le big data en Master 2 en France, pour devenir ingénieur IA / Data.";
   objectiveInner.querySelector(".objective-tags")?.remove();
   const objectives = [
-    ["01", "Objectif académique", "Master 2 Intelligence Artificielle & Science des Données", "Machine learning, deep learning et big data, en formation initiale."],
-    ["02", "Ce que j’apporte", "Une expérience concrète de l’IA appliquée", "Machine learning, LLM et pipelines de données en contexte industriel chez Capgemini Engineering."],
+    ["01", "Objectif académique", "Master 2 IA, Data Science & Big Data", "Machine learning, deep learning, science des données et big data, en formation initiale."],
+    ["02", "Ce que j’apporte", "Une expérience concrète de la data et de l’IA appliquée", "Pipelines de données, BI, machine learning et LLM en contexte industriel chez Capgemini Engineering."],
     ["03", "À moyen terme", "Ingénieur IA / Data", "Ingénieur IA · Consultant spécialisé IA / Data · Chef de projet technique"],
   ];
   const grid = document.createElement("div");
@@ -426,10 +441,10 @@ const contactTitle = document.querySelector("#contact-title");
 if (contactTitle) contactTitle.textContent = "Construisons la prochaine étape";
 const contactCopy = document.querySelector(".contact-main > p:not(.eyebrow)");
 if (contactCopy) {
-  contactCopy.textContent = "Candidat à un Master 2 en Intelligence Artificielle et Science des Données pour la rentrée 2027. Je serais heureux d’échanger sur mon parcours et mes projets.";
+  contactCopy.textContent = "Candidat à un Master 2 en intelligence artificielle, science des données et big data pour la rentrée 2027. Je serais heureux d’échanger sur mon parcours et mes projets.";
   const contactSupport = document.createElement("p");
   contactSupport.className = "contact-support";
-  contactSupport.textContent = "Data, machine learning, LLM : je souhaite approfondir ces sujets dans un cadre académique exigeant.";
+  contactSupport.textContent = "Data engineering, machine learning, big data, LLM : je souhaite approfondir ces sujets dans un cadre académique exigeant.";
   contactCopy.after(contactSupport);
 }
 
@@ -614,8 +629,10 @@ if (certificationPlaceholder) {
     if (certification.url) {
       link.href = certification.url;
       link.textContent = "Vérifier le certificat";
-    } else {
+    } else if (certification.file) {
       enableDownloadWhenAvailable(link, certification.file, "Voir le certificat", "Certificat à ajouter");
+    } else {
+      link.remove();
     }
   });
   certificationPlaceholder.replaceWith(certificationList);
