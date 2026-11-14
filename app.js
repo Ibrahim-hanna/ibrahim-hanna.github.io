@@ -57,7 +57,7 @@ const featuredExperience = experienceList?.querySelector(".experience-featured")
 if (experienceList && featuredExperience) {
   const currentRole = document.createElement("article");
   currentRole.className = "experience-item";
-  currentRole.innerHTML = '<div class="experience-meta"><span class="experience-index">01</span><span>CDI · 08/2026 — PRÉSENT</span></div><div class="experience-main"><div class="experience-title"><div><p class="eyebrow">Data Engineer</p><h3>Capgemini Engineering</h3><p class="experience-location">Casablanca, Maroc</p></div></div><p class="experience-description">Conception et optimisation de pipelines d’intégration de données.</p><div class="experience-points"><span>Automatisation des flux de données et tableaux de bord décisionnels pour les équipes métier</span><span>Contrôle de la qualité, de la fiabilité et de la gouvernance des données</span></div><div class="inline-tags"><span>Python</span><span>SQL</span><span>Power BI</span><span>Excel</span></div></div>';
+  currentRole.innerHTML = '<div class="experience-meta"><span class="experience-index">01</span><span>CDI · 08/2026 — PRÉSENT</span></div><div class="experience-main"><div class="experience-title"><div><p class="eyebrow">Data &amp; IA Engineer</p><h3>Capgemini Engineering</h3><p class="experience-location">Casablanca, Maroc</p></div></div><p class="experience-description">Conception et optimisation de pipelines d’intégration de données.</p><div class="experience-points"><span>Automatisation des flux de données et tableaux de bord décisionnels pour les équipes métier</span><span>Contrôle de la qualité, de la fiabilité et de la gouvernance des données</span><span>Évolution de la plateforme du PFE en outil interne : en test interne, après un accord de principe des équipes Capgemini France et Maroc</span></div><div class="inline-tags"><span>Python</span><span>SQL</span><span>Power BI</span><span>Excel</span></div></div>';
   experienceList.insertBefore(currentRole, featuredExperience);
 
   const pfeDate = featuredExperience.querySelector(".experience-meta span:last-child");
@@ -83,7 +83,7 @@ if (experienceList && featuredExperience) {
 }
 
 const heroRole = document.querySelector(".hero-role");
-if (heroRole) heroRole.textContent = "Ingénieur Data — Parcours MIAGE";
+if (heroRole) heroRole.textContent = "Ingénieur Data & IA — Parcours MIAGE";
 const heroHeading = document.querySelector("#hero-title");
 if (heroHeading && !document.querySelector(".hero-portrait")) {
   const nameRow = document.createElement("div");
@@ -100,15 +100,15 @@ if (heroHeading && !document.querySelector(".hero-portrait")) {
 }
 const heroLead = document.querySelector(".hero-lead");
 if (heroLead) {
-  heroLead.textContent = "Data Engineer chez Capgemini Engineering, je conçois des solutions qui combinent pipelines de données, machine learning et LLM pour aider à la décision.";
+  heroLead.textContent = "Data & IA Engineer chez Capgemini Engineering, je conçois des solutions data et IA au service de la décision : pipelines de données, tableaux de bord, machine learning et LLM.";
 }
 const heroGoal = document.createElement("div");
 heroGoal.className = "hero-goal";
-heroGoal.innerHTML = "<strong>Objectif</strong><span>Master 2 IA, Data Science & Big Data — rentrée 2027</span>";
+heroGoal.innerHTML = "<strong>Objectif</strong><span>Master 2 Data, Décision & IA — rentrée 2027</span>";
 heroLead?.after(heroGoal);
 const heroTopics = document.querySelector(".topic-row");
 if (heroTopics) {
-  heroTopics.replaceChildren(...["Intelligence artificielle", "Machine Learning", "LLM & RAG", "Data Engineering", "Business Intelligence"]
+  heroTopics.replaceChildren(...["Data Engineering", "Aide à la décision", "Business Intelligence", "IA appliquée", "LLM & RAG"]
     .map((topic) => {
       const badge = document.createElement("span");
       badge.textContent = topic;
@@ -116,7 +116,7 @@ if (heroTopics) {
     }));
 }
 const heroStatus = document.querySelector(".hero-contact > span:first-child");
-if (heroStatus) heroStatus.textContent = "Candidat Master 2 IA & Data · rentrée 2027";
+if (heroStatus) heroStatus.textContent = "Candidat Master 2 Data, Décision & IA · rentrée 2027";
 const heroContactLink = document.querySelector(".hero-contact a");
 if (heroContactLink) {
   heroContactLink.href = "#objectif";
@@ -200,8 +200,8 @@ const sequenceText = document.querySelector(".intro-inner p");
 if (sequenceText) {
   const sequence = document.createElement("div");
   sequence.className = "position-sequence";
-  sequence.setAttribute("aria-label", "MIAGE, Data Engineering, Machine Learning, IA générative, Master 2 IA");
-  ["MIAGE", "Data Engineering", "Machine Learning", "IA générative", "Master 2 IA"]
+  sequence.setAttribute("aria-label", "MIAGE, Data Engineering, Aide à la décision, IA appliquée, Master 2 Data, Décision et IA");
+  ["MIAGE", "Data Engineering", "Aide à la décision", "IA appliquée", "Master 2 Data & IA"]
     .forEach((label, index, stages) => {
       const stage = document.createElement("span");
       stage.className = "position-stage";
@@ -230,9 +230,9 @@ if (profileTitle) {
 const profileCopy = document.querySelector(".profile-copy");
 if (profileCopy) {
   const paragraphs = [
-    "Ingénieur en Génie Informatique (parcours MIAGE, EMSI Casablanca) et Data Engineer chez Capgemini Engineering, je travaille sur toute la chaîne de la donnée : nettoyage, pipelines ETL, entrepôts de données, business intelligence et machine learning.",
-    "Mon PFE m’a permis de concevoir une plateforme prédictive qui combine machine learning, LLM et pipelines de données pour des programmes automobiles Stellantis. Mes projets académiques couvrent aussi le data engineering et la BI (entrepôt de données, Power BI), le RAG, la détection de fraude et la vision par ordinateur.",
-    "Je souhaite approfondir l’intelligence artificielle, la science des données et le big data en Master 2, pour devenir ingénieur IA.",
+    "Ingénieur en Génie Informatique (parcours MIAGE, EMSI Casablanca) et Data & IA Engineer chez Capgemini Engineering, je travaille sur toute la chaîne de la donnée : nettoyage, pipelines ETL, entrepôts de données, business intelligence et IA appliquée.",
+    "Mon PFE m’a permis de concevoir une plateforme prédictive d’aide à la décision qui combine machine learning, LLM et pipelines de données pour des programmes automobiles Stellantis. Mes projets académiques couvrent aussi le data engineering et la BI (entrepôt de données, Power BI), le RAG, la détection de fraude et la vision par ordinateur.",
+    "Je souhaite approfondir en Master 2 l’informatique décisionnelle, l’aide à la décision et l’IA appliquée, pour concevoir des solutions data et IA au service de la décision, puis évoluer vers le pilotage de projets data et IA.",
   ];
   profileCopy.replaceChildren(...paragraphs.map((text) => {
     const paragraph = document.createElement("p");
@@ -263,7 +263,7 @@ if (featuredExperience) {
   const description = featuredExperience.querySelector(".experience-description");
   if (pfeType) pfeType.textContent = "Stagiaire Data & Intelligence Artificielle";
   if (projectName) projectName.textContent = "PDE — Predictive Delay Engine";
-  if (description) description.textContent = "Plateforme prédictive de suivi des risques projets pour des programmes automobiles Stellantis (MG2 Engineering).";
+  if (description) description.textContent = "Plateforme prédictive d’aide à la décision pour le suivi des risques projets de programmes automobiles Stellantis.";
   const contributions = [
     "Prototype de modèle de prédiction des retards de jalons (Random Forest, scikit-learn), puis conception d’un score de risque interprétable",
     "Intégration d’un LLM (Qwen2.5 en local via Ollama) pour générer recommandations et rapports : prompt engineering et validation des sorties",
@@ -368,13 +368,14 @@ for (const card of projectGrid?.querySelectorAll(".project-card") ?? []) {
 }
 
 const skillGroups = [
+  ["Aide à la décision", "Recherche opérationnelle · Programmation linéaire · Analyse des données · Statistiques · Tableaux de bord décisionnels", "RO"],
   ["IA & Machine Learning", "Apprentissage supervisé · Random Forest · scikit-learn · Détection d’anomalies (Isolation Forest) · Vision par ordinateur (OpenCV) · Hugging Face Transformers", "IA"],
   ["IA générative & LLM", "LLM en local (Ollama, Qwen2.5) · RAG · LangChain · Sentence Transformers · Recherche sémantique · Prompt engineering · Systèmes agentiques", "LLM"],
   ["Data", "Pipelines ETL · Nettoyage et normalisation des données · Entrepôt de données (schéma en étoile) · PostgreSQL · MySQL · SQL Server · Oracle · SQLite · Pandas · NumPy", "DATA"],
   ["Langages & environnement", "Python · SQL · C/C++ · Java · JavaScript · Linux · Shell · Git · Docker", "CODE"],
   ["Développement", "FastAPI · Streamlit · Java Spring Boot · React", "DEV"],
   ["Visualisation & décision", "Power BI · Plotly · Excel · Indicateurs · Tableaux de bord", "BI"],
-  ["Méthodes", "Modélisation UML · Gestion de projet", "UML"],
+  ["Méthodes", "Modélisation UML · Gestion de projet · Management de la qualité", "UML"],
 ];
 const skillsGrid = document.querySelector(".skills-grid");
 if (skillsGrid) {
@@ -392,10 +393,10 @@ if (education) {
   if (institution) institution.textContent = "EMSI — École Marocaine des Sciences de l’Ingénieur, Casablanca";
   const summary = document.createElement("p");
   summary.className = "education-summary";
-  summary.textContent = "Niveau Bac+5. Informatique et données : Machine Learning, Deep Learning, bases de données et Business Intelligence, algorithmique et complexité, programmation (Python, C/C++, Java). Mathématiques : algèbre, analyse, probabilités et statistiques, recherche opérationnelle, logique.";
+  summary.textContent = "Niveau Bac+5. Données et décision : recherche opérationnelle, programmation linéaire, analyse des données, data warehouse, SQL Server, data mining et big data, systèmes d’information. Programmation et gestion : programmation orientée objet (C++, Java), J2EE, gestion de projet, management.";
   education.querySelector(".inline-tags")?.before(summary);
   const tags = education.querySelector(".inline-tags");
-  tags?.replaceChildren(...["Machine Learning", "Deep Learning", "Bases de données & BI", "Algorithmique", "Probabilités & statistiques", "Recherche opérationnelle"].map((text) => {
+  tags?.replaceChildren(...["Recherche opérationnelle", "Analyse des données", "Data warehouse", "Bases de données", "Systèmes d’information", "Gestion de projet"].map((text) => {
     const tag = document.createElement("span");
     tag.textContent = text;
     return tag;
@@ -409,12 +410,12 @@ if (objectiveInner) {
   const summary = objectiveInner.querySelector("p:not(.eyebrow)");
   if (eyebrow) eyebrow.textContent = "MASTER 2 · PROJET D’ÉTUDES · RENTRÉE 2027";
   if (title) title.textContent = "Mon projet d’études";
-  if (summary) summary.textContent = "Approfondir l’intelligence artificielle et le big data en Master 2 en France, pour devenir ingénieur IA / Data.";
+  if (summary) summary.textContent = "Approfondir en Master 2 en France la donnée, l’aide à la décision et l’IA appliquée, pour concevoir des solutions data et IA au service de la décision.";
   objectiveInner.querySelector(".objective-tags")?.remove();
   const objectives = [
-    ["01", "Objectif académique", "Master 2 IA, Data Science & Big Data", "Machine learning, deep learning, science des données et big data, en formation initiale."],
-    ["02", "Ce que j’apporte", "Une expérience concrète de la data et de l’IA appliquée", "Pipelines de données, BI, machine learning et LLM en contexte industriel chez Capgemini Engineering."],
-    ["03", "À moyen terme", "Ingénieur IA / Data", "Ingénieur IA · Consultant spécialisé IA / Data · Chef de projet technique"],
+    ["01", "Objectif académique", "Master 2 Data, Décision & IA", "Informatique décisionnelle, aide à la décision et IA appliquée, en formation initiale."],
+    ["02", "Ce que j’apporte", "Une expérience concrète de la data et de l’IA appliquée", "Pipelines de données, BI, aide à la décision et LLM en contexte industriel chez Capgemini Engineering."],
+    ["03", "À plus long terme", "Pilotage de projets data et IA", "Ingénieur Data & IA, puis chef de projet data et IA"],
   ];
   const grid = document.createElement("div");
   grid.className = "objective-grid";
@@ -441,10 +442,10 @@ const contactTitle = document.querySelector("#contact-title");
 if (contactTitle) contactTitle.textContent = "Construisons la prochaine étape";
 const contactCopy = document.querySelector(".contact-main > p:not(.eyebrow)");
 if (contactCopy) {
-  contactCopy.textContent = "Candidat à un Master 2 en intelligence artificielle, science des données et big data pour la rentrée 2027. Je serais heureux d’échanger sur mon parcours et mes projets.";
+  contactCopy.textContent = "Candidat à un Master 2 Data, Décision & IA pour la rentrée 2027. Je serais heureux d’échanger sur mon parcours et mes projets.";
   const contactSupport = document.createElement("p");
   contactSupport.className = "contact-support";
-  contactSupport.textContent = "Data engineering, machine learning, big data, LLM : je souhaite approfondir ces sujets dans un cadre académique exigeant.";
+  contactSupport.textContent = "Données, aide à la décision, IA appliquée : je souhaite approfondir ces sujets dans un cadre académique exigeant.";
   contactCopy.after(contactSupport);
 }
 
