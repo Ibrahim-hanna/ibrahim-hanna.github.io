@@ -22,7 +22,7 @@ const projectDetails = {
   pde: {
     problem: "Dans les programmes automobiles, les informations projet sont dispersées : il devient difficile d’anticiper les retards de jalons et de prioriser les points durs.",
     role: "Prototype d’un modèle de prédiction des retards (Random Forest), conception d’un score de risque interprétable, intégration de LLM pour générer recommandations et rapports, pipeline d’ingestion automatisé et tableau de bord.",
-    result: "Une plateforme prédictive qui centralise les données projet, classe les risques et propose des actions aux managers, avec une couche IA générative exécutée en local (Qwen2.5 via Ollama).",
+    result: "Une plateforme prédictive qui centralise les données projet, classe les risques et propose des actions aux managers, avec une couche IA générative : Generative Engine, l’IA interne de Capgemini, après un prototype local avec Ollama.",
   },
   rag: {
     problem: "Comment retrouver rapidement une information fiable dans un grand volume de documents métiers, sans lire chaque document ?",
@@ -266,7 +266,7 @@ if (featuredExperience) {
   if (description) description.textContent = "Plateforme prédictive d’aide à la décision pour le suivi des risques projets de programmes automobiles Stellantis.";
   const contributions = [
     "Prototype de modèle de prédiction des retards de jalons (Random Forest, scikit-learn), puis conception d’un score de risque interprétable",
-    "Intégration d’un LLM (Qwen2.5 en local via Ollama) pour générer recommandations et rapports : prompt engineering et validation des sorties",
+    "Intégration d’un LLM (Generative Engine, IA interne de Capgemini, après un prototype local avec Ollama) pour générer recommandations et rapports : prompt engineering et validation des sorties",
     "Architecture agentique : corrélation des risques, priorisation et relances automatiques à trois niveaux",
     "Pipeline d’ingestion automatisé (n8n, déduplication SHA-256), API FastAPI, base SQLite et tableau de bord Streamlit",
   ];
@@ -276,7 +276,7 @@ if (featuredExperience) {
     item.textContent = text;
     return item;
   }));
-  const technologies = ["Python", "scikit-learn", "Random Forest", "LLM Qwen2.5 / Ollama", "FastAPI", "n8n", "Streamlit", "SQLite"];
+  const technologies = ["Python", "scikit-learn", "Random Forest", "Generative Engine", "Ollama", "FastAPI", "n8n", "Streamlit", "SQLite"];
   const tags = featuredExperience.querySelector(".experience-main > .inline-tags");
   tags?.replaceChildren(...technologies.map((text) => {
     const tag = document.createElement("span");
@@ -370,7 +370,7 @@ for (const card of projectGrid?.querySelectorAll(".project-card") ?? []) {
 const skillGroups = [
   ["Aide à la décision", "Recherche opérationnelle · Programmation linéaire · Analyse des données · Statistiques · Tableaux de bord décisionnels", "RO"],
   ["IA & Machine Learning", "Apprentissage supervisé · Random Forest · scikit-learn · Détection d’anomalies (Isolation Forest) · Vision par ordinateur (OpenCV) · Hugging Face Transformers", "IA"],
-  ["IA générative & LLM", "LLM en local (Ollama, Qwen2.5) · RAG · LangChain · Sentence Transformers · Recherche sémantique · Prompt engineering · Systèmes agentiques", "LLM"],
+  ["IA générative & LLM", "Generative Engine (Capgemini) · LLM en local (Ollama, Qwen2.5) · RAG · LangChain · Sentence Transformers · Recherche sémantique · Prompt engineering · Systèmes agentiques", "LLM"],
   ["Data", "Pipelines ETL · Nettoyage et normalisation des données · Entrepôt de données (schéma en étoile) · PostgreSQL · MySQL · SQL Server · Oracle · SQLite · Pandas · NumPy", "DATA"],
   ["Langages & environnement", "Python · SQL · C/C++ · Java · JavaScript · Linux · Shell · Git · Docker", "CODE"],
   ["Développement", "FastAPI · Streamlit · Java Spring Boot · React", "DEV"],
